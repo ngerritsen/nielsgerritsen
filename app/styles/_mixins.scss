@@ -1,0 +1,79 @@
+@mixin reset-spacing() {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin reset-list() {
+    display: block;
+    @include reset-spacing;
+}
+
+@mixin vertical-center-text($height) {
+    height: $height;
+    line-height: $height;
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin size-restricted($width, $height: $width){
+    width: $width;
+    max-width: $width;
+    height: $height;
+    max-height: $height;
+}
+
+@mixin clean-text-links($color) {
+    $hover-offset: 20%;
+    $hover-color: lighten($color, $hover-offset);
+
+    @if lightness($color) > lightness($grey){
+        $hover-color: darken($hover-offset);
+    }
+
+    text-decoration: none;
+    color: $color;
+
+    &:hover {
+        text-decoration: none;
+        color: $hover-color;
+    }
+
+    &:active {
+        text-decoration: none;
+        color: $hover-color;
+    }
+
+    &:visited {
+        text-decoration: none;
+        color: $hover-color;
+    }
+}
+
+/* Responsive */
+
+@mixin mobile-down(){
+    @media(max-width: $screen-xs-max){
+        @content;
+    }
+}
+
+@mixin tablet-down(){
+    @media(max-width: $screen-sm-max){
+        @content;
+    }
+}
+
+@mixin desktop-down(){
+    @media(max-width: $screen-md-max){
+        @content;
+    }
+}
+
+@mixin hd-down(){
+    @media(max-width: $screen-lg-max){
+        @content;
+    }
+}

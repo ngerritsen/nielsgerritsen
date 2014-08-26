@@ -1,0 +1,47 @@
+/* Fonts */
+
+@font-face {
+    font-family: Bariol;
+    src: url(../fonts/bariol.woff);
+}
+
+@font-face {
+    font-family: Bariol;
+    src: url(../fonts/bariol-italic.woff);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Bariol;
+    src: url(../fonts/bariol-bold.woff);
+    font-weight: bold;
+}
+
+$standard-font: 'Bariol', Helvetica, Arial, sans-serif;
+
+/* Colors */
+
+$white: #ffffff;
+$black: #000000;
+$grey: darken($white, 50%);
+$light-grey: darken($white, 25%);
+$dark-grey: darken($white, 75%);
+$main-text-color: lighten($black, 20%);
+$soft-night: #383d44;
+
+/* Spacing */
+
+$spacing-base: 2rem;
+
+$spacing-medium: $spacing-base;
+
+$spacing-small: $spacing-medium/2;
+$spacing-extra-small: $spacing-small/2;
+
+$spacing-large: $spacing-medium*2;
+$spacing-extra-large: $spacing-large*2;
+$spacing-jumbo: $spacing-extra-large*2;
+
+/* Z-Index */
+
+$z-index-top-bar: 100;
