@@ -21,8 +21,6 @@
   "dependencies": {
     "bootstrap-sass-official": "~3.1.1",
     "jquery": "~1.11.0",
-    "scrollr": "~0.6.26",
-    "modernizr": "~2.6.2",
-    "smooth-scroll": "~1.0.1"
+    "scrollr": "~0.6.26"
   }
 }
