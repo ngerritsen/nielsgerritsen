@@ -20,7 +20,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 </head>
-<body>
+<body data-spy="scroll">
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -36,20 +36,22 @@
                 <div class="top-bar-content pull-right">
                     <button class="mobile-menu-button btn btn-primary hidden-lg hidden-md hidden-sm">Menu</button>
                 </div>
-
-                <ul class="main-menu hidden-xs pull-right">
-                    <li class="main-menu-item"><a href="#what-i-do">What I Do</a></li>
-                    <li class="main-menu-item"><a href="#work">Work</a></li>
-                    <li class="main-menu-item"><a href="#info">Info</a></li>
-                </ul>
+                <div class="main-menu-container">
+                    <ul class="main-menu nav hidden-xs pull-right">
+                        <li class="main-menu-item dummy"><a href="#top">Top</a></li>
+                        <li class="main-menu-item"><a href="#whatido">What I Do</a></li>
+                        <li class="main-menu-item"><a href="#work">Work</a></li>
+                        <li class="main-menu-item"><a href="#info">Info</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </nav>
 
-<header class="intro" data-0="background-position: 0;" data-500="background-position: 200px;">
+<header id="#top" class="intro" data-0="background-position: center 0px;" data-500="background-position: center 80px;">
     <div class="container-fluid">
-        <div class="quote-circle-container center-block" data-50="opacity: 1;" data-300="opacity: 0.1;">
+        <div id="#top" class="quote-circle-container center-block" data-50="opacity: 1;" data-300="opacity: 0.1;">
             <div class="quote-circle text-center">
                 <p class="quote">
                     I believe
@@ -62,7 +64,7 @@
     </div>
 </header>
 
-<section name="what-i-do">
+<section id="whatido">
     <ul class="skill-list">
         <li class="skill-item clearfix">
             <div class="container-fluid">
@@ -70,21 +72,20 @@
                     <article class="col-xs-12 col-md-6">
                         <h2>Learn</h2>
 
-                        <p>I see learning as my most valueable skill. If I need to learn some framework or find a new
-                            solution for a problem, I am eager to learn something new myself or from someone else.</p>
+                        <p>I see learning as my most valueable skill. If I need to learn some framework, language or method, I am eager and capable to learn it fast, either by myself or from someone else. This also makes me more flexible in finding new solutions.</p>
                     </article>
                 </div>
             </div>
         </li>
-        <li class="skill-item clearfix">
+        <li class="skill-item skill-item-code clearfix">
             <div class="container-fluid">
                 <div class="row">
                     <article class="col-xs-12 col-md-6 col-md-offset-6 text-right">
                         <h2>Code</h2>
 
-                        <p>I am mainly focussed on front end techniques like HTML5, SASS and Javascript with frameworks
+                        <p>I am mainly focussed on front end techniques like HTML5, SASS and Javascript in combination with frameworks
                             like
-                            Angular JS. But I am not afraid of coding C# with ASP.NET</p>
+                            Angular JS. But I am not afraid and capable of coding API's or backend functionalities with for instance C#.</p>
                     </article>
                 </div>
             </div>
@@ -97,7 +98,49 @@
 
                         <p>No matter if I am using plain pencil and paper, or tools like Photoshop and Illustrator. My
                             goal
-                            is to make a design that is functional aswell as asthetically pleasing.</p>
+                            is to make a design that is functional aswell as aesthetically pleasing.</p>
+                    </article>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section id="work">
+    <ul class="skill-list">
+        <li class="skill-item clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6">
+                        <h2>Learn</h2>
+
+                        <p>I see learning as my most valueable skill. If I need to learn some framework, language or method, I am eager and capable to learn it fast, either by myself or from someone else. This also makes me more flexible in finding new solutions.</p>
+                    </article>
+                </div>
+            </div>
+        </li>
+        <li class="skill-item skill-item-code clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6 col-md-offset-6 text-right">
+                        <h2>Code</h2>
+
+                        <p>I am mainly focussed on front end techniques like HTML5, SASS and Javascript in combination with frameworks
+                            like
+                            Angular JS. But I am not afraid and capable of coding API's or backend functionalities with for instance C#.</p>
+                    </article>
+                </div>
+            </div>
+        </li>
+        <li class="skill-item clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6">
+                        <h2>Design</h2>
+
+                        <p>No matter if I am using plain pencil and paper, or tools like Photoshop and Illustrator. My
+                            goal
+                            is to make a design that is functional aswell as aesthetically pleasing.</p>
                     </article>
                 </div>
             </div>

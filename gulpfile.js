@@ -1,7 +1,9 @@
 'use strict';
 // generated on 2014-08-26 using generator-gulp-webapp 0.1.0
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    compass = require('gulp-compass'),
+    path = require('path');
 
 // load plugins
 var $ = require('gulp-load-plugins')();

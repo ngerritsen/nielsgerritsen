@@ -9,9 +9,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "mixins";
 
 body {
+    position: relative;
     font-size: 1.8rem;
     color: $main-text-color;
     font-family: $standard-font;
+}
+
+p {
+    margin-bottom: $spacing-medium;
 }
 
 .container-fluid {
@@ -34,9 +39,10 @@ body {
 
 $top-bar-height: 12rem;
 $top-bar-mobile-height: 9rem;
-$top-bar-collapsed-height: 6rem;
+$top-bar-collapsed-height: 6.5rem;
 
 .top-bar {
+    transition: height 0.2s ease;
     height: $top-bar-height;
     position: fixed;
     z-index: $z-index-top-bar;
@@ -48,18 +54,29 @@ $top-bar-collapsed-height: 6rem;
     @include tablet-down {
        height: $top-bar-mobile-height; 
     }
+
+    &.collapsed {
+        height: $top-bar-collapsed-height;
+    }
 }
 
-%top-bar-content {
+.collapsed {
+    %top-bar-content, .top-bar-content {
+    @include vertical-center-text($top-bar-collapsed-height);
+
+    @include tablet-down {
+        @include vertical-center-text($top-bar-collapsed-height);
+    }
+}
+}
+
+%top-bar-content, .top-bar-content {
+    transition: all 0.2s ease;
     @include vertical-center-text($top-bar-height);
 
     @include tablet-down {
         @include vertical-center-text($top-bar-mobile-height);
     }
-}
-
-.top-bar-content {
-    @extend %top-bar-content;
 }
 
 .website-title {
@@ -73,31 +90,47 @@ $top-bar-collapsed-height: 6rem;
 
 .main-menu {
     @include reset-list;
+
+    .main-menu-item {
+        @include reset-list;
+        @extend %top-bar-content;
+
+        float: left;
+        margin-left: $spacing-large;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        a {
+            @include reset-spacing;
+            padding: 0 $spacing-small;
+            font-size: 2.1rem;
+            @include clean-text-links($main-text-color);
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &.active a {
+            font-weight: bold;
+        }
+    }
 }
 
-.main-menu-item {
-    @include reset-list;
-    @extend %top-bar-content;
-
-    float: left;
-    margin-left: $spacing-large;
-
-    &:first-child {
-        margin-left: 0;
-    }
-
-    a {
-        font-size: 2.1rem;
-        @include clean-text-links($main-text-color);
-    }
+.nav li a {
+    @include reset-spacing; //reset boostrap spacing for nav items
 }
+
+
 
 /* Intro */
 
 .intro {
     @include clearfix;
 
-    background: url(../images/header-bg.jpg) no-repeat 0 center;
+    background: darken($white, 5%) url(../images/header-bg.jpg) no-repeat 0 center;
     @include background-size(cover);
     padding-top: 25rem;
     padding-bottom: 15rem;
@@ -166,5 +199,11 @@ $quote-circle-small-radius: 22rem;
 .skill-item {
     @include reset-list;
     padding: $spacing-large 0;
+}
+
+.skill-item-code {
+    background: url(../images/code-bg.jpg) no-repeat 0 center;
+    @include background-size(cover);
+    color: $white;
 }
 
