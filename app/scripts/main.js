@@ -24,6 +24,7 @@ $(document).ready(function () {
 
 	$('body').scrollspy({
 		target: '.main-menu-container',
+		offset: 65
 	});
 
 	$(window).resize(function() {

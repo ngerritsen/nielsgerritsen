@@ -4,7 +4,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
-@import "css3-mixins";
+@import "compass";
 @import "variables";
 @import "mixins";
 
@@ -42,7 +42,7 @@ $top-bar-mobile-height: 9rem;
 $top-bar-collapsed-height: 6.5rem;
 
 .top-bar {
-    transition: height 0.2s ease;
+    @include transition(height 0.2s ease);
     height: $top-bar-height;
     position: fixed;
     z-index: $z-index-top-bar;
@@ -71,7 +71,7 @@ $top-bar-collapsed-height: 6.5rem;
 }
 
 %top-bar-content, .top-bar-content {
-    transition: all 0.2s ease;
+    @include transition(height 0.2s ease);
     @include vertical-center-text($top-bar-height);
 
     @include tablet-down {
@@ -83,9 +83,11 @@ $top-bar-collapsed-height: 6.5rem;
     @include reset-spacing;
     @extend %top-bar-content;
 
-    font-size: 3.2rem;
-    font-weight: bold;
-    color: $soft-night;
+    a {
+        font-size: 3.2rem;
+        font-weight: bold;
+        @include clean-text-links($soft-night);
+    }
 }
 
 .main-menu {
@@ -104,9 +106,9 @@ $top-bar-collapsed-height: 6.5rem;
 
         a {
             @include reset-spacing;
+            @include clean-text-links($main-text-color);
             padding: 0 $spacing-small;
             font-size: 2.1rem;
-            @include clean-text-links($main-text-color);
 
             &:hover {
                 background-color: transparent;
@@ -122,8 +124,6 @@ $top-bar-collapsed-height: 6.5rem;
 .nav li a {
     @include reset-spacing; //reset boostrap spacing for nav items
 }
-
-
 
 /* Intro */
 

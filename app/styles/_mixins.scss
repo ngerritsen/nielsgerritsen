@@ -26,7 +26,7 @@
 }
 
 @mixin clean-text-links($color) {
-    $hover-offset: 20%;
+    $hover-offset: 30%;
     $hover-color: lighten($color, $hover-offset);
 
     @if lightness($color) > lightness($grey){
@@ -48,7 +48,7 @@
 
     &:visited {
         text-decoration: none;
-        color: $hover-color;
+        color: $color;
     }
 }
 
