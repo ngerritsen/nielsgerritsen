@@ -198,11 +198,12 @@ $quote-circle-small-radius: 22rem;
 
 .skill-item {
     @include reset-list;
-    padding: $spacing-large 0;
+    padding: $spacing-large + $spacing-medium 0;
 }
 
 .skill-item-code {
-    background: url(../images/code-bg.jpg) no-repeat 0 center;
+    background: url(../images/code-bg.jpg) no-repeat center 50% fixed;
+    @include box-shadow(0px 8px 20px lighten($black, 5%) inset);
     @include background-size(cover);
     color: $white;
 }
