@@ -21,9 +21,15 @@ p {
 
 .container-fluid {
     max-width: 1200px;
+    padding: 0 $spacing-large - $spacing-small;
+
+    @include mobile-down {
+        padding: 0 $spacing-medium;
+    }
 }
 
 .btn {
+    @include transition(background-color 0.2s ease);
     border: 2px;
     padding: 8px 14px;
     @include border-radius(8px);
@@ -43,13 +49,15 @@ $top-bar-collapsed-height: 6.5rem;
 
 .top-bar {
     @include transition(height 0.2s ease);
+    @include transition-property(height, background-color);
     height: $top-bar-height;
     position: fixed;
     z-index: $z-index-top-bar;
     top: 0;
     width: 100%;
     background-color: rgba($white, 0.9);
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 0px solid lighten($light-grey, 5%);
+    @include box-shadow(0 2px 5px rgba($black, 0.2));
 
     @include tablet-down {
        height: $top-bar-mobile-height; 
@@ -57,6 +65,7 @@ $top-bar-collapsed-height: 6.5rem;
 
     &.collapsed {
         height: $top-bar-collapsed-height;
+        background-color: rgba($white, 1);
     }
 }
 
@@ -199,6 +208,10 @@ $quote-circle-small-radius: 22rem;
 .skill-item {
     @include reset-list;
     padding: $spacing-large + $spacing-medium 0;
+
+    @include mobile-down {
+        padding: $spacing-large 0;
+    }
 }
 
 .skill-item-code {
