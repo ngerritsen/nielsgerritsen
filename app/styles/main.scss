@@ -39,6 +39,10 @@ p {
     &:active, &:hover {
         @include box-shadow(0 0 0 $white);
     }
+
+    &.btn-large {
+        padding: 12px 24px;
+    }
 }
 
 /* Top Bar */
@@ -206,7 +210,9 @@ $quote-circle-small-radius: 22rem;
 }
 
 .skill-item {
+    @include clearfix;
     @include reset-list;
+
     padding: $spacing-large + $spacing-medium 0;
 
     @include mobile-down {
@@ -219,5 +225,26 @@ $quote-circle-small-radius: 22rem;
     @include box-shadow(0px 8px 20px lighten($black, 5%) inset);
     @include background-size(cover);
     color: $white;
+}
+
+#info {
+    background-color: darken($white, 8%);
+
+    padding: $spacing-extra-large 0;
+
+    @include mobile-down {
+        padding: $spacing-large 0;
+    }
+}
+
+.info-button-section {
+    padding-top: $spacing-large;
+}
+
+.portrait-ball {
+    $portrait-ball-size: 80%;
+
+    @include size-restricted($portrait-ball-size);
+    @include border-radius(9999px);
 }
 
