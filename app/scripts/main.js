@@ -30,14 +30,14 @@ $(document).ready(function () {
 
 	//Activate menu tabs based on scroll position
 
-	$('body').scrollspy({
+	/*$('body').scrollspy({
 		target: '.main-menu-container',
 		offset: 65
 	});
 
 	$(window).resize(function() {
 	 	$('body').scrollspy('refresh');
-	});
+	});*/
 
 	//Collapse top bar on scroll down
 
