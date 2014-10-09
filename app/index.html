@@ -32,8 +32,8 @@
                 <div class="top-bar-content pull-right">
                     <button class="mobile-menu-button btn btn-primary hidden-lg hidden-md hidden-sm hidden-xs">Menu</button>
                 </div>
-                <div class="main-menu-container">
-                    <ul class="main-menu nav  pull-right">
+                <div class="main-menu-container hidden-xs">
+                    <ul class="main-menu nav pull-right">
                         <li class="main-menu-item"><a href="#whatido">What I Do</a></li>
                         <!--li class="main-menu-item"><a href="#work">Work</a></li-->
                         <li class="main-menu-item"><a href="#info">Info</a></li>
@@ -119,7 +119,7 @@
             <article class="col-xs-8">
                 <h2>Info</h2>
 
-                <p>My name is Niels Gerritsen, I am a 25 year old developer from Holland. I graduated with Industrial Product Design at The Hague University. But already before I graduated I did a lot of web development, just as a hobby, but also for a company where I worked as an intern. Then at the same company where I did my graduation internship, I started working as a software developer. I still mainly focus on front-end development and user interface design, but I also do backend programming in C#.</p>
+                <p>My name is Niels Gerritsen, I am a <span id="age"></span> year old developer from Holland. I graduated with Industrial Product Design at The Hague University. But already before I graduated I did a lot of web development, just as a hobby, but also for a company where I worked as an intern. Then at the same company where I did my graduation internship, I started working as a software developer. I still mainly focus on front-end development and user interface design, but I also do backend programming in C#.</p>
 
                 <button href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large">Connect on LinkedIn</button>
             </article>
@@ -150,6 +150,7 @@
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/scrollr/src/skrollr.js"></script>
 <script src="bower_components/scrollReveal.js/dist/scrollReveal.js"></script>
+<script src="bower_components/moment/moment.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

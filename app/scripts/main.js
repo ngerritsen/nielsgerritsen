@@ -1,5 +1,6 @@
 /* global skrollr */
 /* global scrollReveal */
+/* global moment */
 
 'use strict';
 
@@ -27,6 +28,11 @@ $(document).ready(function () {
             }
         }
     });
+
+	//Auto set age
+	var age = moment('18-07-1989', 'DD-MM-YYYY').fromNow();
+	age = age.replace(/\D/g, ''); //strip everything but numbers from the string
+	$('#age').text(age);
 
 	//Activate menu tabs based on scroll position
 
