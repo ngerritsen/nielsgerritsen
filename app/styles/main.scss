@@ -243,9 +243,10 @@ $quote-circle-small-radius: 22rem;
 }
 
 .portrait-ball {
-    $portrait-ball-size: 80%;
-
+    display: inline-block;
+    $portrait-ball-size: 100%;
     @include size-restricted($portrait-ball-size);
+    max-width: 256px;
     @include border-radius(9999px);
 }
 

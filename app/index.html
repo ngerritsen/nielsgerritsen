@@ -4,19 +4,13 @@
     <meta charset="utf-8">
     <title>NielsGerritsen_</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
-<body data-spy="scroll">
+<body>
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -35,7 +29,6 @@
                 <div class="main-menu-container hidden-xs">
                     <ul class="main-menu nav pull-right">
                         <li class="main-menu-item"><a href="#whatido">What I Do</a></li>
-                        <!--li class="main-menu-item"><a href="#work">Work</a></li-->
                         <li class="main-menu-item"><a href="#info">Info</a></li>
                     </ul>
                 </div>
@@ -44,90 +37,84 @@
     </div>
 </nav>
 
-<header id="#top" class="intro" data-0="background-position: center 0px;" data-500="background-position: center 120px;">
-    <div class="container-fluid">
-        <div id="#top" class="quote-circle-container center-block" data-50="opacity: 1;" data-300="opacity: 0.1;">
-            <div class="quote-circle text-center">
-                <p class="quote">
-                    I believe
-                    <span class="big">design & code</span>
-                    are inseperable <br>
-                    ..
-                </p>
-            </div>
-        </div>
-    </div>
-</header>
-
-<section id="whatido">
-    <ul class="skill-list">
-        <li class="skill-item">
-            <div class="container-fluid">
-                <div class="row">
-                    <article class="col-xs-12 col-md-6" data-scroll-reveal="enter left after 0.25s">
-                        <h2>Learn</h2>
-
-                        <p>I see learning as my most valueable skill. If I need to learn some framework, language or method, I am eager and capable to learn it fast, either by myself or from someone else. This also makes me more flexible in finding new solutions.</p>
-                    </article>
+<div id="skrollr-body">
+    <header id="#top" class="intro" data-0="background-position: center 0px;" data-500="background-position: center 120px;">
+        <div class="container-fluid">
+            <div id="#top" class="quote-circle-container center-block" data-50="opacity: 1;" data-300="opacity: 0.1;">
+                <div class="quote-circle text-center">
+                    <p class="quote">
+                        I believe
+                        <span class="big">design & code</span>
+                        are inseperable <br>
+                        ..
+                    </p>
                 </div>
             </div>
-        </li>
-        <li class="skill-item skill-item-code">
-            <div class="container-fluid">
-                <div class="row">
-                    <article class="col-xs-12 col-md-6 col-md-offset-6 text-right" data-scroll-reveal="enter right after 0.25s">
-                        <h2>Code</h2>
-
-                        <p>I am mainly focussed on front end techniques like HTML5, SASS and Javascript in combination with frameworks
-                            like
-                            Angular JS. But I am not afraid and capable of coding API's or backend functionalities with for instance C#.</p>
-                    </article>
-                </div>
-            </div>
-        </li>
-        <li class="skill-item">
-            <div class="container-fluid">
-                <div class="row">
-                    <article class="col-xs-12 col-md-6" data-scroll-reveal="enter left after 0.25s">
-                        <h2>Design</h2>
-
-                        <p>No matter if I am using plain pencil and paper, or tools like Photoshop and Illustrator. My
-                            goal
-                            is to make a design that is functional aswell as aesthetically pleasing.</p>
-                    </article>
-                </div>
-            </div>
-        </li>
-    </ul>
-</section>
-
-<!-- <section id="work">
-    <div class="container-fluid">
-        <div class="row">
         </div>
-    </div>
-</section> -->
+    </header>
 
-<section id="info">
-    <div class="container-fluid info-section">
-        <div class="row">
-            <figure class="col-xs-4">
-                <img src="images/portrait.jpg" class="portrait-ball"  
-                data-800="transform:rotate(-50deg);" 
-                data-1200="transform:rotate(0deg);"></img>
-            </figure>
-            <article class="col-xs-8">
-                <h2>Info</h2>
+    <section id="whatido">
+        <ul class="skill-list">
+            <li class="skill-item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <article class="col-xs-12 col-md-6" data-scroll-reveal="enter left after 0.25s">
+                            <h2>Learn</h2>
 
-                <p>My name is Niels Gerritsen, I am a <span id="age"></span> year old developer from Holland. I graduated with Industrial Product Design at The Hague University. But already before I graduated I did a lot of web development, just as a hobby, but also for a company where I worked as an intern. Then at the same company where I did my graduation internship, I started working as a software developer. I still mainly focus on front-end development and user interface design, but I also do backend programming in C#.</p>
+                            <p>I see learning as my most valueable skill. If I need to learn some framework, language or method, I am eager and capable to learn it fast, either by myself or from someone else. This also makes me more flexible in finding new solutions.</p>
+                        </article>
+                    </div>
+                </div>
+            </li>
+            <li class="skill-item skill-item-code">
+                <div class="container-fluid">
+                    <div class="row">
+                        <article class="col-xs-12 col-md-6 col-md-offset-6 text-right" data-scroll-reveal="enter right after 0.25s">
+                            <h2>Code</h2>
 
-                <button href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large">Connect on LinkedIn</button>
-            </article>
+                            <p>I am mainly focussed on front end techniques like HTML5, SASS and Javascript in combination with frameworks
+                                like
+                                Angular JS. But I am not afraid and capable of coding API's or backend functionalities with for instance C#.</p>
+                        </article>
+                    </div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <article class="col-xs-12 col-md-6" data-scroll-reveal="enter left after 0.25s">
+                            <h2>Design</h2>
+
+                            <p>No matter if I am using plain pencil and paper, or tools like Photoshop and Illustrator. My
+                                goal
+                                is to make a design that is functional aswell as aesthetically pleasing.</p>
+                        </article>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="info">
+        <div class="container-fluid info-section">
+            <div class="row">
+                <figure class="portrait-ball-container text-center col-xs-12 col-sm-4 col-md-3">
+                    <img src="images/portrait.jpg" class="portrait-ball"  
+                    data-800="transform:rotate(-50deg);" 
+                    data-1200="transform:rotate(0deg);"></img>
+                </figure>
+                <article class="col-sm-8 col-md-9">
+                    <h2>Info</h2>
+
+                    <p>My name is Niels Gerritsen, I am a <span id="age"></span> year old developer from Holland. I graduated with Industrial Product Design at The Hague University. But already before I graduated I did a lot of web development, just as a hobby. Then at the same company where I did my graduation internship, I started working as a software developer. I specialize in front-end development, but I also do backend programming.</p>
+
+                    <button href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large">Connect on LinkedIn</button>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function (b, o, i, l, e, r) {
         b.GoogleAnalyticsObject = l;
@@ -141,7 +128,7 @@
         e.src = '//www.google-analytics.com/analytics.js';
         r.parentNode.insertBefore(e, r)
     }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
+    ga('create', 'UA-39696629-1');
     ga('send', 'pageview');
 </script>
 
@@ -152,22 +139,6 @@
 <script src="bower_components/scrollReveal.js/dist/scrollReveal.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <!-- endbower -->
-<!-- endbuild -->
-
-
-<!-- build:js scripts/plugins.js -->
-<!--<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script> 
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
 <!-- build:js scripts/main.js -->

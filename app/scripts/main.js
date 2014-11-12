@@ -1,4 +1,4 @@
-/* global skrollr */
+
 /* global scrollReveal */
 /* global moment */
 
@@ -8,9 +8,9 @@ $(document).ready(function () {
 
 	//Parallax Scrolling
 
-	skrollr.init({
-		smoothScrolling: false
-	});
+	// skrollr.init({
+	// 	smoothScrolling: false
+	// });
 
 	//Scroll Reveal
 
