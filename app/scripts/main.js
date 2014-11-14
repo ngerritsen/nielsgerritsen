@@ -21,7 +21,7 @@ $(document).ready(function () {
 	 $('a[href*=#]:not([href=#]):not(a.flex-next):not(a.flex-prev)').click(function () {
         if (location.pathname.replace(/^\//, ') === this.pathname.replace(/^\//, ') || location.hostname === this.hostname) {
             var a = $(this.hash);
-            if (a = a.length ? a : $('[name=' + this.hash.slice(1) + ']'), a.length) { 
+            if (a = a.length ? a : $('[name=' + this.hash.slice(1) + ']'), a.length) {
             	return $('html,body').animate({
                 	scrollTop: a.offset().top - 65
             	}, 1e3), !1;

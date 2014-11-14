@@ -9,11 +9,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "mixins";
 
 body {
-    position: relative;
     font-size: 1.8rem;
     color: $main-text-color;
     font-family: $standard-font;
-    height: auto !important;
 }
 
 p {
@@ -65,7 +63,7 @@ $top-bar-collapsed-height: 6.5rem;
     @include box-shadow(0 2px 5px rgba($black, 0.2));
 
     @include tablet-down {
-       height: $top-bar-mobile-height; 
+       height: $top-bar-mobile-height;
     }
 
     &.collapsed {
@@ -249,4 +247,3 @@ $quote-circle-small-radius: 22rem;
     max-width: 256px;
     @include border-radius(9999px);
 }
-
