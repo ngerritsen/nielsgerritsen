@@ -10,7 +10,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 body {
     position: relative;
-    font-size: 1.8rem;
+    font-size: 2.0rem;
     color: $main-text-color;
     font-family: $standard-font;
     height: auto !important;
@@ -36,6 +36,8 @@ p {
     @include border-radius(8px);
     font-weight: bold;
     font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    margin-right: 0.8rem;
 
     &:active, &:hover {
         @include box-shadow(0 0 0 $white);
@@ -44,13 +46,16 @@ p {
     &.btn-large {
         padding: 12px 24px;
     }
+
+    &.btn-full-display {
+        @include mobile-down {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 }
 
 /* Top Bar */
-
-$top-bar-height: 12rem;
-$top-bar-mobile-height: 9rem;
-$top-bar-collapsed-height: 6.5rem;
 
 .top-bar {
     @include transition(height 0.2s ease);
@@ -65,7 +70,7 @@ $top-bar-collapsed-height: 6.5rem;
     @include box-shadow(0 2px 5px rgba($black, 0.2));
 
     @include tablet-down {
-       height: $top-bar-mobile-height; 
+       height: $top-bar-mobile-height;
     }
 
     &.collapsed {

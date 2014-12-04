@@ -31,7 +31,7 @@ $soft-night: #383d44;
 
 /* Spacing */
 
-$spacing-base: 2rem;
+$spacing-base: 1.8rem;
 
 $spacing-medium: $spacing-base;
 
@@ -41,6 +41,12 @@ $spacing-extra-small: $spacing-small/2;
 $spacing-large: $spacing-medium*2;
 $spacing-extra-large: $spacing-large*2;
 $spacing-jumbo: $spacing-extra-large*2;
+
+/* Sizing */
+
+$top-bar-height: 12rem;
+$top-bar-mobile-height: 7rem;
+$top-bar-collapsed-height: 6rem;
 
 /* Z-Index */
 
