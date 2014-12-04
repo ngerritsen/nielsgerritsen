@@ -13,7 +13,6 @@ body {
     font-size: 2.0rem;
     color: $main-text-color;
     font-family: $standard-font;
-    height: auto !important;
 }
 
 p {
@@ -254,4 +253,3 @@ $quote-circle-small-radius: 22rem;
     max-width: 256px;
     @include border-radius(9999px);
 }
-
