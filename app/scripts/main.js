@@ -16,7 +16,7 @@ $(document).ready(function () {
 	//Scroll Reveal
 
 	window.scrollReveal = new scrollReveal({
-        mobile: false
+        mobile: true
     });
 
 	//Smooth scrolling to correct position

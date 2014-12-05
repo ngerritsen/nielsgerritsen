@@ -25,6 +25,13 @@ gulp.task('scripts', function () {
         .pipe($.size());
 });
 
+
+gulp.task('files', function () {
+    return gulp.src('app/files/**/*')
+        .pipe(gulp.dest('dist/files'))
+        .pipe($.size());
+});
+
 gulp.task('html', ['compass', 'scripts'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
@@ -71,7 +78,7 @@ gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras']);
+gulp.task('build', ['html', 'images', 'files', 'fonts', 'extras']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
