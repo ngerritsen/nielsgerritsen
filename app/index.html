@@ -16,7 +16,7 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<nav class="top-bar" id="top">
+<nav class="top-bar">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6">
@@ -58,7 +58,7 @@
             <li class="skill-item">
                 <div class="container-fluid">
                     <div class="row">
-                        <article class="col-xs-12 col-md-6" data-scroll-reveal="enter left after 0.25s">
+                        <article class="col-xs-12 col-md-6" data-sr="enter left after 0.25s">
                             <h2>Learn</h2>
 
                             <p>I see learning as my most valueable skill. If I need to learn some framework, language or method, I am eager and capable to learn it fast, either by myself or from someone else. This also makes me more flexible in finding new solutions.</p>
@@ -69,7 +69,7 @@
             <li class="skill-item skill-item-code">
                 <div class="container-fluid">
                     <div class="row">
-                        <article class="col-xs-12 col-md-6 col-md-offset-6 text-right" data-scroll-reveal="enter right after 0.25s">
+                        <article class="col-xs-12 col-md-6 col-md-offset-6 text-right" data-sr="enter right after 0.25s">
                             <h2>Code</h2>
 
                             <p>I am mainly focussed on front end techniques like HTML5, SASS and Javascript in combination with frameworks
@@ -82,7 +82,7 @@
             <li class="skill-item">
                 <div class="container-fluid">
                     <div class="row">
-                        <article class="col-xs-12 col-md-6" data-scroll-reveal="enter left after 0.25s">
+                        <article class="col-xs-12 col-md-6" data-sr="enter left after 0.25s">
                             <h2>Design</h2>
 
                             <p>No matter if I am using plain pencil and paper, or tools like Photoshop and Illustrator. My
@@ -99,17 +99,15 @@
         <div class="container-fluid info-section">
             <div class="row">
                 <figure class="portrait-ball-container text-center col-xs-12 col-sm-4 col-md-3">
-                    <img src="images/portrait.jpg" class="portrait-ball">
-                    <!--
-                data-500-end="transform:rotate(-50deg);"
-                data-50-end="transform:rotate(0deg);"-->
+                    <img src="images/portrait.jpg" class="portrait-ball" data-600-end="transform:rotate(-50deg);"
+                         data-150-end="transform:rotate(0deg);">
                 </figure>
                 <article class="col-sm-8 col-md-9">
                     <h2>Info</h2>
 
                     <p>My name is Niels Gerritsen, I am a <span id="age"></span> year old software developer from Holland. I specialize in front-end development, using modern frameworks and tooling like Angular, Node.js, Gulp and SASS. I graduated with Industrial Product Design at The Hague University, but during my study I already I did a lot of web development in my spare time. I did my graduation internship at Hoogendoorn, after my graduation I started working there as a software developer learning a lot about front and backend development.</p>
 
-                    <a href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large btn-full-display">Connect on LinkedIn</a>
+                    <a href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large btn-full-display" target="_blank">Connect on LinkedIn</a>
                     <a href="/files/cv-ng-2015.pdf" class="btn btn-primary btn-large btn-full-display" download>Download Curriculum Vitae</a>
                 </article>
             </div>
@@ -134,17 +132,11 @@
     ga('send', 'pageview');
 </script>
 
-<!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/scrollr/src/skrollr.js"></script>
 <script src="bower_components/scrollReveal.js/dist/scrollReveal.js"></script>
 <script src="bower_components/moment/moment.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
 
-<!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
-<!-- endbuild -->
 </body>
 </html>
