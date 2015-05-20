@@ -23,7 +23,9 @@
     "jquery": "~1.11.0",
     "scrollr": "~0.6.26",
     "scrollReveal.js": "~2.3.0",
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "fontawesome": "~4.3.0",
+    "bootstrap-sass": "~3.3.4"
   },
   "resolutions": {
     "bootstrap-sass-official": "~3.3.4"

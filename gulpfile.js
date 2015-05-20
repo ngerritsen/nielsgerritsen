@@ -101,6 +101,7 @@ gulp.task('default', ['sass', 'scripts', 'images', 'serve', 'watch']);
 
 gulp.task('watch', function () {
     gulp.watch('app/styles/**/*.scss', ['sass']);
+    gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
 });

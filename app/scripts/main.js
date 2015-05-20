@@ -15,15 +15,15 @@ $(document).ready(function () {
 
 	//Scroll Reveal
 
-	window.scrollReveal = new scrollReveal({
-        mobile: true,
-        delay: 'onload'
-    });
+    //window.scrollReveal = new scrollReveal({
+    //    mobile: true,
+    //    delay: 'onload'
+    //});
 
 	//Smooth scrolling to correct position
 
 	 $('a[href*=#]:not([href=#]):not(a.flex-next):not(a.flex-prev)').click(function () {
-        if (location.pathname.replace(/^\//, ') === this.pathname.replace(/^\//, ') || location.hostname === thibowers.hostname) {
+        if (location.pathname.replace(/^\//, ') === this.pathname.replace(/^\//, ') || location.hostname === this.hostname) {
             var a = $(this.hash);
             if (a = a.length ? a : $('[name=' + this.hash.slice(1) + ']'), a.length) {
             	return $('html,body').animate({
