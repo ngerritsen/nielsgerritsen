@@ -36,7 +36,7 @@ gulp.task('files', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src('app/*.html')
+    return gulp.src(['app/*.html', 'app/*.ico'])
         .pipe(gulp.dest('dist'))
 });
 
