@@ -1,10 +1,6 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-// bower:scss
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-// endbower
-
-@import "compass";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "variables";
 @import "mixins";
 
@@ -13,6 +9,7 @@ body {
     font-size: 2.0rem;
     color: $main-text-color;
     font-family: $standard-font;
+    height: auto !important;
 }
 
 p {
@@ -29,17 +26,17 @@ p {
 }
 
 .btn {
-    @include transition(background-color 0.2s ease);
+    transition: background-color 0.2s ease;
     border: 2px;
     padding: 8px 14px;
-    @include border-radius(8px);
+    border-radius: 8px;
     font-weight: bold;
     font-size: 1.6rem;
     margin-bottom: 0.8rem;
     margin-right: 0.8rem;
 
     &:active, &:hover {
-        @include box-shadow(0 0 0 $white);
+        box-shadow: 0 0 0 $white;
     }
 
     &.btn-large {
@@ -57,19 +54,19 @@ p {
 /* Top Bar */
 
 .top-bar {
-    @include transition(height 0.2s ease);
-    @include transition-property(height, background-color);
+    transition: height 0.2s ease;
+    transition-property: height, background-color;
     height: $top-bar-height;
     position: fixed;
     z-index: $z-index-top-bar;
     top: 0;
     width: 100%;
     background-color: rgba($white, 0.9);
-    border-bottom: 0px solid lighten($light-grey, 5%);
-    @include box-shadow(0 2px 5px rgba($black, 0.2));
+    border-bottom: 0 solid lighten($light-grey, 5%);
+    box-shadow: 0 2px 5px rgba($black, 0.2);
 
     @include tablet-down {
-       height: $top-bar-mobile-height;
+        height: $top-bar-mobile-height;
     }
 
     &.collapsed {
@@ -80,17 +77,17 @@ p {
 
 .collapsed {
     %top-bar-content, .top-bar-content {
-    @include vertical-center-text($top-bar-collapsed-height);
-
-    @include tablet-down {
         @include vertical-center-text($top-bar-collapsed-height);
+
+        @include tablet-down {
+            @include vertical-center-text($top-bar-collapsed-height);
+        }
     }
-}
 }
 
 %top-bar-content, .top-bar-content {
-    @include transition(height 0.2s ease);
     @include vertical-center-text($top-bar-height);
+    transition: height 0.2s ease;
 
     @include tablet-down {
         @include vertical-center-text($top-bar-mobile-height);
@@ -149,7 +146,7 @@ p {
     @include clearfix;
 
     background: darken($white, 5%) url(../images/header-bg.jpg) no-repeat 0 center;
-    @include background-size(cover);
+    background-size: cover;
     padding-top: 25rem;
     padding-bottom: 15rem;
     max-height: 800px;
@@ -178,7 +175,7 @@ $quote-circle-small-radius: 22rem;
 }
 
 .quote-circle {
-    @include border-radius(9999px);
+    border-radius: 9999px;
     display: table-cell;
     vertical-align: middle;
     background-color: rgba($white, 0.98);
@@ -226,15 +223,14 @@ $quote-circle-small-radius: 22rem;
 }
 
 .skill-item-code {
-    background: url(../images/code-bg.jpg) no-repeat center 50% fixed;
-    @include box-shadow(0px 8px 20px lighten($black, 5%) inset);
-    @include background-size(cover);
+    background: url('../images/code-bg.jpg') no-repeat center 50% fixed;
+    box-shadow: 0 8px 20px lighten($black, 5%) inset;
+    background-size: cover;
     color: $white;
 }
 
 #info {
     background-color: darken($white, 8%);
-
     padding: $spacing-extra-large 0;
 
     @include mobile-down {
@@ -248,8 +244,9 @@ $quote-circle-small-radius: 22rem;
 
 .portrait-ball {
     display: inline-block;
-    $portrait-ball-size: 100%;
-    @include size-restricted($portrait-ball-size);
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
     max-width: 256px;
-    @include border-radius(9999px);
+    border-radius: 9999px
 }
