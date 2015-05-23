@@ -1,5 +1,4 @@
 /* global skrollr */
-/* global scrollReveal */
 /* global moment */
 
 'use strict';
@@ -47,4 +46,29 @@ $(document).ready(function () {
 	        $('.top-bar').removeClass('collapsed');
    		}
 	});
+
+    //Toggle thumbnail views
+    function createPubMetaOnHandler(pubMetaId, pubIdOn) {
+        return function() {
+            $(pubMetaId).addClass('show');
+            $(pubIdOn).fadeOut(200);
+        };
+    }
+
+    function createPubMetaOffHandler(pubMetaId, pubIdOn) {
+        return function() {
+            $(pubMetaId).removeClass('show');
+            $(pubIdOn).fadeIn(200);
+        };
+    }
+
+    var publications = 2;
+    for(var i = 0; i <= publications; i++) {
+        var pubIdOn = '#pub-' + i + '-on';
+        var pubIdOff = '#pub-' + i + '-off';
+        var pubMetaId = '#pub-' + i + '-meta';
+
+        $(pubIdOn).click(createPubMetaOnHandler(pubMetaId, pubIdOn));
+        $(pubIdOff).click(createPubMetaOffHandler(pubMetaId, pubIdOn));
+    }
 });
