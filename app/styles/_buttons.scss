@@ -1,0 +1,31 @@
+.btn {
+    transition: background-color 0.2s ease;
+    border: 2px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    margin-right: 0.8rem;
+
+    &:active, &:hover {
+        box-shadow: 0 0 0 $white;
+    }
+
+    &.btn-large {
+        padding: 12px 24px;
+    }
+
+    &.btn-full-display {
+        @include mobile-down {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}
+
+.btn {
+    .fa {
+        margin-right: 8px;
+    }
+}

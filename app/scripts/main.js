@@ -62,7 +62,7 @@ $(document).ready(function () {
         };
     }
 
-    var publications = 2;
+    var publications = $('.publication-item').length;
     for(var i = 0; i <= publications; i++) {
         var pubIdOn = '#pub-' + i + '-on';
         var pubIdOff = '#pub-' + i + '-off';
