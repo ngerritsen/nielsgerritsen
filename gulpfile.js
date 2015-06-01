@@ -1,6 +1,3 @@
-'use strict';
-// generated on 2014-08-26 using generator-gulp-webapp 0.1.0
-
 var gulp = require('gulp');
 var autoprefixer = require('autoprefixer-core');
 var browserify = require('browserify');
@@ -9,7 +6,6 @@ var browserSync = require('browser-sync').create();
 
 // load plugins
 var $ = require('gulp-load-plugins')();
-
 
 gulp.task('sass', function(){
     return gulp.src('app/styles/main.scss')
@@ -68,7 +64,7 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('minify-js', function() {
-    gulp.src('./app/scripts/main.js')
+    gulp.src('./app/scripts/bundle.js')
         .pipe($.uglify())
         .pipe(gulp.dest('./dist/scripts/'))
         .pipe($.size({
@@ -113,7 +109,7 @@ gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'watch']);
 gulp.task('watch', function () {
     gulp.watch('app/styles/**/*.scss', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
-    gulp.watch('app/scripts/**/*.js', ['jshint', 'bundle']);
+    gulp.watch(['app/scripts/**/*.js', '!app/scripts/bundle.js'], ['jshint', 'bundle']);
     gulp.watch('app/images/**/*', ['images']);
 });
 
