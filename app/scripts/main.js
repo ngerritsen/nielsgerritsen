@@ -1,25 +1,14 @@
-/* global skrollr */
-/* global moment */
-
-'use strict';
+var skrollr = require('skrollr');
+var moment = require('moment');
 
 $(document).ready(function () {
+    'use strict';
 
 	//Parallax Scrolling
-
 	skrollr.init({
 		smoothScrolling: false,
         forceHeight: false
 	});
-
-	//Scroll Reveal
-
-    //window.scrollReveal = new scrollReveal({
-    //    mobile: true,
-    //    delay: 'onload'
-    //});
-
-	//Smooth scrolling to correct position
 
 	 $('a[href*=#]:not([href=#]):not(a.flex-next):not(a.flex-prev)').click(function () {
         if (location.pathname.replace(/^\//, ') === this.pathname.replace(/^\//, ') || location.hostname === this.hostname) {
