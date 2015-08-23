@@ -8,6 +8,6 @@ env:
   global:
     - secure: fjlZRoknWj6+UA8U65B+TZmFQv71PdsIcQAlEj/6zotvE8F22RjP4zzfjAyBKNUehrRWGXr4JS3FP14lSWs3xlK1nj537seY2+96TDZ2AjmKkcRdpqjpWns/cth0MpPPBzV4PszAoEyLjqmGwpq5/IjVZ52c8VALBjI+Pt+X6SVFiFKmrTLYLCMjS8aA1qfsHgSo/M9Wj5TZaELjVabj5ItkAbqm05SEUZB81EcvKqCxsXisW70iscGBHfOZnvB1qI/biKe6TJIQ0MK4OMFN1jalxtj3XcIQ0OSfXt/kJCwKeaFhCYiEcfgtepxBtwGiY58zMhT4mAP6ZH/NDv0kuU8Ew5qZs+p5YdKR0E0qq3tJafEe3VOzkb923KgD800dqI0XnnBCGIeFQWbNawKKPTwwAQiQc8/x3sz6GRxPj90U4+VwKRPvamqoSKrqGLb/9sQ7nSsRRs/hCfuBMZHpiPyhzrN5HNXJWSApf/fCx/M0JrfccIjyaxj3YuhhEPGsFyRS/QJw4GOT9EKBrmac+B/x3LaOLVHz5AMFcPDm1PSfa8Mavx0pRQcF/7vnMZ6dqVuCBmVLoG/hLkLNOq8C3wL+PcYkum7juGfoGWM/u8cm/Bnv4PDgq9eDAqAyJiTRXD2lx/W/PkhqlXDVvwyQo8Pf4fZnl8A7XQL8DcxmwAk=
     - secure: XDdTZHvlVWMjpYgzMPKIEeRu+8namsdexykroSxm/qfjGJpSUzbfICXMA/jEV5x46QQctuOare5442BdUKp11Cmwgms0vuhYVytwkA+cY/8PF730vIQm4yn3WmqqjpiAN/yYUEKquGTGdCTLGQNhc51j5hilRqbMAbgw0VWIxmSzLqeKFGzatAgN9VwSqaXyAoYO8ZBABppMtNr/lYzeyI9/GFS413zdhk1tl8JWi8diowP+U2zQhgj6BqRYCmphzuHmjyd/GKQnIezdZR71i7JN6bByde5zPth6JX0DP9eD8yTSmkU1D+IvidHja2zUVLGlEizs7IDJYEBp9rG9rBIfyEQpmyQUlwJ2iqBO32Jc8IdBJ2vq7g/nb/wBL+fytF8EKc90vmKJGZpWhauSeFxIxPrymf7Q80BppTTi8DVR49GnE5LRryrtxfzrHpmaenIVW4u6/zb3y557MAoBzH+jwOxepNT42JhqmNl6gLzTiNy74P1p61wS/g18B2cI2lpzsUbdx2GyZ0CK84Iy5WxX0Zt2NNxsm/HKmEXQ4gyJZn56KzquKwgZ9MH+EGFszw1L1Hc4yt+ePStCjk8vkYNhJWz8BjWN6Sa93J0RccqowEzp9CFMvr3dQKL4LR/Tsm7yWNWZqAHnQIMrosDKAJx2C+FddLHJorOu1Wu/Vfk=
-after_success: 
+after_success:
   - "cd dist"
-  - "find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://carehr.nl/public_html/nielsgerritsen/{} \;"
+  - "find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://carehr.nl/public_html/nielsgerritsen/{}"
