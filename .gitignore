@@ -6,3 +6,4 @@ app/bower_components
 .idea
 npm-debug.log
 app/styles/main.css
+app/styles/font-awesome.css

@@ -51,7 +51,7 @@ gulp.task('html', function () {
 
 gulp.task('copy-font-awesome', function () {
     gulp.src('./app/bower_components/fontawesome/css/font-awesome.css')
-        .pipe(gulp.dest('./styles'));
+        .pipe(gulp.dest('./app/styles'));
 });
 
 gulp.task('minify-css', function() {
