@@ -4,6 +4,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
 var minimist = require('minimist');
+var runSequence = require('run-sequence');
 var del = require('del');
 
 var $ = require('gulp-load-plugins')();
@@ -125,4 +126,11 @@ gulp.task('watch', function () {
     gulp.watch('app/images/**/*', ['images']);
 });
 
-gulp.task('build', ['html', 'sass', 'jshint', 'bundle', 'images', 'files', 'fonts', 'copy-font-awesome', 'minify-css', 'minify-js']);
+gulp.task('build', function () {
+    runSequence(
+        'clean',
+        'jshint',
+        ['html', 'sass', 'bundle', 'images', 'files', 'fonts', 'copy-font-awesome'],
+        ['minify-css', 'minify-js']
+    );
+});

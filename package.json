@@ -37,6 +37,7 @@
     "minimist": "^1.2.0",
     "opn": "^0.1.1",
     "postcss": "^4.1.11",
+    "run-sequence": "^1.1.2",
     "vinyl-source-stream": "^1.1.0",
     "wiredep": "^1.4.3"
   },
