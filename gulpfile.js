@@ -5,6 +5,7 @@ var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
 var minimist = require('minimist');
 var runSequence = require('run-sequence');
+var ftp = require('vinyl-ftp');
 var del = require('del');
 
 var $ = require('gulp-load-plugins')();
@@ -91,14 +92,17 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('ftp', function () {
-   return gulp.src(['./dist/**'])
-       .pipe($.ftp({
-           host: 'carehr.nl',
-           remotePath: '/public_html/nielsgerritsen/',
-           user: args.user,
-           pass: args.password
-       }))
-       .pipe(gulp.dest('.'));
+    var remotePath = '/public_html/nielsgerritsen/';
+    var conn = ftp.create({
+        host: 'carehr.nl',
+        user: args.user,
+        pass: args.password,
+        log: $.util.log
+    });
+
+    return gulp.src(['./dist/**'])
+        .pipe(conn.newer(remotePath))
+        .pipe(conn.dest(remotePath));
 });
 
 gulp.task('clean', function () {
