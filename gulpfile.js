@@ -3,9 +3,11 @@ var autoprefixer = require('autoprefixer-core');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
+var minimist = require('minimist');
+var del = require('del');
 
-// load plugins
 var $ = require('gulp-load-plugins')();
+var args = minimist(process.argv.slice(2));
 
 gulp.task('sass', function(){
     return gulp.src('app/styles/main.scss')
@@ -47,9 +49,9 @@ gulp.task('html', function () {
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('copy-bower-components', function () {
-    gulp.src('./app/bower_components/**/*.{js,css,eot,svg,ttf,woff,woff2,otf}')
-        .pipe(gulp.dest('dist/bower_components'));
+gulp.task('copy-font-awesome', function () {
+    gulp.src('./app/bower_components/fontawesome/css/font-awesome.css')
+        .pipe(gulp.dest('./styles'));
 });
 
 gulp.task('minify-css', function() {
@@ -75,11 +77,6 @@ gulp.task('minify-js', function() {
 
 gulp.task('images', function () {
     return gulp.src('app/images/**/*')
-        // .pipe($.cache($.imagemin({
-        //     optimizationLevel: 3,
-        //     progressive: true,
-        //     interlaced: true
-        // })))
         .pipe(gulp.dest('dist/images'))
         .pipe($.size());
 });
@@ -90,6 +87,17 @@ gulp.task('fonts', function () {
         .pipe($.flatten())
         .pipe(gulp.dest('dist/fonts'))
         .pipe($.size());
+});
+
+gulp.task('ftp', function () {
+   return gulp.src(['./dist/**'])
+       .pipe($.ftp({
+           host: 'carehr.nl',
+           remotePath: '/public_html/nielsgerritsen/',
+           user: args.user,
+           pass: args.password
+       }))
+       .pipe(gulp.dest('.'));
 });
 
 gulp.task('clean', function () {
@@ -104,7 +112,11 @@ gulp.task('serve', function () {
     });
 });
 
-gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'watch']);
+gulp.task('clean', function (cb) {
+    del(['./dist/**'], cb);
+});
+
+gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'copy-font-awesome', 'watch']);
 
 gulp.task('watch', function () {
     gulp.watch('app/styles/**/*.scss', ['sass']);
@@ -113,4 +125,4 @@ gulp.task('watch', function () {
     gulp.watch('app/images/**/*', ['images']);
 });
 
-gulp.task('build', [ 'html', 'sass', 'jshint', 'bundle', 'images', 'files', 'fonts', 'minify-css', 'minify-js', 'copy-bower-components']);
+gulp.task('build', ['html', 'sass', 'jshint', 'bundle', 'images', 'files', 'fonts', 'copy-font-awesome', 'minify-css', 'minify-js']);
