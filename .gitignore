@@ -7,3 +7,5 @@ app/bower_components
 npm-debug.log
 app/styles/main.css
 app/styles/font-awesome.css
+app/fonts/fontawesome*
+app/fonts/glyphicons*

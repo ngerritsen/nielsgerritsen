@@ -1,4 +1,5 @@
 .btn {
+    color: white;
     transition: background-color 0.2s ease;
     border: 2px;
     padding: 8px 14px;
@@ -27,5 +28,17 @@
 .btn {
     .fa {
         margin-right: 8px;
+    }
+}
+
+.btn-success {
+    $bg-color: desaturate(#2ecc71, 10%);
+    background-color: $bg-color;
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+        background-color: darken($bg-color, 10%);
     }
 }

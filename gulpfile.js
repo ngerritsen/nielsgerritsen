@@ -91,6 +91,14 @@ gulp.task('fonts', function () {
         .pipe($.size());
 });
 
+gulp.task('dev-fonts', function () {
+    return gulp.src('app/**/*.{eot,svg,ttf,woff}')
+        .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
+        .pipe($.flatten())
+        .pipe(gulp.dest('app/fonts'))
+        .pipe($.size());
+});
+
 gulp.task('ftp', function () {
     var remotePath = '/public_html/nielsgerritsen/';
     var conn = ftp.create({
@@ -121,7 +129,7 @@ gulp.task('clean', function (cb) {
     del(['./dist/**'], cb);
 });
 
-gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'copy-font-awesome', 'watch']);
+gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'copy-font-awesome', 'dev-fonts', 'watch']);
 
 gulp.task('watch', function () {
     gulp.watch('app/styles/**/*.scss', ['sass']);
