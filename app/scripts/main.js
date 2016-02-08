@@ -8,7 +8,7 @@ $(document).ready(function () {
     //Parallax Scrolling
     skrollr.init({
         smoothScrolling: false,
-        forceHeight: false
+        forceHeight: true
     });
 
     //Smooth scrolling
