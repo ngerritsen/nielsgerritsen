@@ -6,10 +6,10 @@ $(document).ready(function () {
     'use strict';
 
     //Parallax Scrolling
-    skrollr.init({
-        smoothScrolling: false,
-        forceHeight: true
-    });
+   // skrollr.init({
+    //    smoothScrolling: false,
+   //     forceHeight: true
+  //  });
 
     //Smooth scrolling
     $('a[href*=#]:not([href=#]):not(a.flex-next):not(a.flex-prev)').click(function () {
