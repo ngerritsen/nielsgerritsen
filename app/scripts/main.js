@@ -30,8 +30,10 @@ $(document).ready(function () {
   });
 
   //Auto set age
-  var age = moment('18-07-1989', 'DD-MM-YYYY').fromNow();
-  age = age.replace(/\D/g, '');
+  var birth = moment('18-07-1989', 'DD-MM-YYYY');
+  var now = moment();
+  var age = now.diff(birth, 'years');
+
   $('#age').text(age);
 
   //Toggle thumbnail views
