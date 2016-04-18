@@ -2,11 +2,11 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>NielsGerritsen_</title>
-    <meta name="description" content="Personal website of Niels Gerritsen">
+    <title>Niels Gerritsen</title>
+    <meta name="description" content="Hi, I develop for the web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name='og:site_name' content='Niels Gerritsen'>
-    <meta name='og:description' content='The personal portfolio of Niels Gerritsen'>
+    <meta name='og:description' content='Hi, I develop for the web'>
     <meta name='og:image' content="screenshot.png">
 
     <link rel="stylesheet" href="styles/main.css">
@@ -23,20 +23,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-sm-4">
-                <h1 class="website-title"><a href="#top">NielsGerritsen_</a></h1>
+                <h1 class="website-title">nielsgerritsen</h1>
             </div>
             <div class="col-xs-6 col-sm-8">
-                <div class="top-bar-content pull-right">
-                    <button class="mobile-menu-button btn btn-primary hidden-lg hidden-md hidden-sm hidden-xs">Menu</button>
-                </div>
-                <div class="main-menu-container">
-                    <ul class="main-menu nav pull-right">
-                        <li class="main-menu-item hidden-xs"><a href="#whatido">What I Do</a></li>
-                        <li class="main-menu-item hidden-xs"><a href="#publications">Publications</a></li>
-                        <li class="main-menu-item hidden-xs"><a href="#info">Info</a></li>
-                        <li class="main-menu-item"><a href="http://wecodetheweb.com" target="_blank"><strong>Blog</strong></a></li>
-                    </ul>
-                </div>
+                <a class="blog-link" href="http://wecodetheweb.com" target="_blank">Blog</a>
             </div>
         </div>
     </div>
@@ -193,6 +183,28 @@
                         </div>
                     </div>
                 </li>
+                <li class="publication-item col-xs-12 col-sm-6 col-lg-4">
+                    <div class="publication-inner">
+                        <img src="images/npm-thumb.png" class="publication-image">
+                        <div class="publication-meta" id="pub-4-meta">
+                            <h3>npm libraries</h3>
+                            <p>
+                                I published some Javascript libraries on npm. Click the link to check them out.
+                                <a href="https://www.npmjs.com/~ngerritsen" target="_blank">npmjs.com/ngerritsen</a>
+                            </p>
+                            <div class="publication-toggle-wrapper">
+                                <button class="publication-meta-toggle btn btn-primary" id="pub-4-off">
+                                    <i class="fa fa-eye-slash"></i> Hide info
+                                </button>
+                            </div>
+                        </div>
+                        <div class="publication-toggle-wrapper">
+                            <button class="publication-meta-toggle btn btn-primary" id="pub-4-on">
+                                <i class="fa fa-eye"></i> Show info
+                            </button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </section>
@@ -213,18 +225,20 @@
                     <p>I graduated with Industrial Product Design at The Hague University, but during my study I already I did a lot of web development in my spare time.
                         After my graduation I started working as a software developer gaining a lot of experience in front- and back-end development.</p>
 
-                    <a href="https://twitter.com/NielsG89" class="btn btn-primary btn-large btn-full-display" target="_blank" title="Follow @NielsG89 on Twitter">
-                        <i class="fa fa-twitter"></i>Follow me
-                    </a>
-                    <a href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large btn-full-display" target="_blank" title="Connect to Niels Gerritsen on LinkedIn">
-                        <i class="fa fa-linkedin-square"></i>Connect on LinkedIn
-                    </a>
-                    <a href="https://github.com/ngerritsen" class="btn btn-primary btn-large btn-full-display" target="_blank" title="Check me out on GitHub">
-                        <i class="fa fa-github"></i>GitHub
-                    </a>
-                    <a href="/files/cv-ng-2015.pdf" class="btn btn-success btn-large btn-full-display" download title="Download my CV">
-                        <i class="fa fa-file-text"></i>Curriculum Vitae
-                    </a>
+                    <p class="contact-links">
+                      <a href="https://twitter.com/NielsG89" class="btn btn-primary btn-large btn-full-display" target="_blank" title="Follow @NielsG89 on Twitter">
+                          <i class="fa fa-twitter"></i> Follow
+                      </a>
+                      <a href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b" class="btn btn-primary btn-large btn-full-display" target="_blank" title="Connect to Niels Gerritsen on LinkedIn">
+                          <i class="fa fa-linkedin-square"></i> Connect
+                      </a>
+                      <a href="https://github.com/ngerritsen" class="btn btn-primary btn-large btn-full-display" target="_blank" title="Check me out on GitHub">
+                          <i class="fa fa-github"></i> Collab
+                      </a>
+                      <a href="/files/cv-ng-2015.pdf" class="btn btn-success btn-large btn-full-display" download title="Download my CV">
+                          <i class="fa fa-file-text"></i>Curriculum Vitae
+                      </a>
+                  </p>
                 </article>
             </div>
         </div>

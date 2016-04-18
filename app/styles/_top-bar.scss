@@ -1,38 +1,18 @@
 .top-bar {
-  transition: height 0.2s ease;
-  transition-property: height, background-color;
   height: $top-bar-height;
-  position: fixed;
+  position: absolute;
   z-index: $z-index-top-bar;
   top: 0;
   width: 100%;
-  background-color: rgba($white, 0.9);
-  border-bottom: 0 solid lighten($light-grey, 5%);
-  box-shadow: 0 2px 5px rgba($black, 0.2);
+  background-color: rgba($white, 0.5);
 
   @include tablet-down {
     height: $top-bar-mobile-height;
-  }
-
-  &.collapsed {
-    height: $top-bar-collapsed-height;
-    background-color: rgba($white, 1);
-  }
-}
-
-.collapsed {
-  %top-bar-content, .top-bar-content {
-    @include vertical-center-text($top-bar-collapsed-height);
-
-    @include tablet-down {
-      @include vertical-center-text($top-bar-collapsed-height);
-    }
   }
 }
 
 %top-bar-content, .top-bar-content {
   @include vertical-center-text($top-bar-height);
-  transition: height 0.2s ease;
 
   @include tablet-down {
     @include vertical-center-text($top-bar-mobile-height);
@@ -43,44 +23,24 @@
   @include reset-spacing;
   @extend %top-bar-content;
 
-  a {
-    font-size: 3.2rem;
-    font-weight: bold;
-    @include clean-text-links($soft-night);
+  font-size: 3.4rem;
+  font-weight: bold;
+
+  @include mobile-down() {
+    font-size: 3rem;
   }
 }
 
-.main-menu {
-  @include reset-list;
+.blog-link {
+  @extend %top-bar-content;
+  @include reset-spacing;
+  @include clean-text-links($main-text-color);
 
-  .main-menu-item {
-    @include reset-list;
-    @extend %top-bar-content;
+  float: right;
+  padding: 0 $spacing-small;
+  font-size: 2rem;
 
-    float: left;
-    margin-left: $spacing-large;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    a {
-      @include reset-spacing;
-      @include clean-text-links($main-text-color);
-      padding: 0 $spacing-small;
-      font-size: 2rem;
-
-      &:hover {
-        background-color: transparent;
-      }
-    }
-
-    &.active a {
-      font-weight: bold;
-    }
+  &:hover {
+    opacity: 0.8;
   }
-}
-
-.nav li a {
-  @include reset-spacing; //reset boostrap spacing for nav items
 }
