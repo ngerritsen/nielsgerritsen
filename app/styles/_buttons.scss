@@ -1,44 +1,44 @@
 .btn {
-    color: white;
-    transition: background-color 0.2s ease;
-    border: 2px;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
-    margin-right: 0.8rem;
+  color: white;
+  transition: background-color 0.2s ease;
+  border: 2px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  margin-right: 0.8rem;
 
-    &:active, &:hover {
-        box-shadow: 0 0 0 $white;
-    }
+  &:active, &:hover {
+    box-shadow: 0 0 0 $white;
+  }
 
-    &.btn-large {
-        padding: 12px 24px;
-    }
+  &.btn-large {
+    padding: 12px 24px;
+  }
 
-    &.btn-full-display {
-        @include mobile-down {
-            width: 100%;
-            margin-right: 0;
-        }
+  &.btn-full-display {
+    @include mobile-down {
+      width: 100%;
+      margin-right: 0;
     }
+  }
 }
 
 .btn {
-    .fa {
-        margin-right: 8px;
-    }
+  .fa {
+    margin-right: 8px;
+  }
 }
 
 .btn-success {
-    $bg-color: desaturate(#2ecc71, 10%);
-    background-color: $bg-color;
+  $bg-color: desaturate(#2ecc71, 10%);
+  background-color: $bg-color;
 
-    &:hover,
-    &:visited,
-    &:active,
-    &:focus {
-        background-color: darken($bg-color, 10%);
-    }
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    background-color: darken($bg-color, 10%);
+  }
 }

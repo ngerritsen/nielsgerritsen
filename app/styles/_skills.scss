@@ -1,21 +1,21 @@
 .skill-list {
-    @include reset-list;
+  @include reset-list;
 }
 
 .skill-item {
-    @include clearfix;
-    @include reset-list;
+  @include clearfix;
+  @include reset-list;
 
-    padding: $spacing-large + $spacing-medium 0;
+  padding: $spacing-extra-large 0;
 
-    @include mobile-down {
-        padding: $spacing-large 0;
-    }
+  @include mobile-down {
+    padding: $spacing-large 0;
+  }
 }
 
 .skill-item-code {
-    background: url('../images/code-bg.jpg') no-repeat center 50% fixed;
-    box-shadow: 0 8px 20px lighten($black, 5%) inset;
-    background-size: cover;
-    color: $white;
+  background: url('../images/code-bg.jpg') no-repeat center 50% fixed;
+  box-shadow: 0 8px 20px lighten($black, 5%) inset;
+  background-size: cover;
+  color: $white;
 }

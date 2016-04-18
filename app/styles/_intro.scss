@@ -2,63 +2,64 @@ $quote-circle-radius: 30rem;
 $quote-circle-small-radius: 22rem;
 
 .intro {
-    @include clearfix;
+  @include clearfix;
 
-    background: darken($white, 5%) url('../images/header-bg.jpg') no-repeat 0 center;
-    background-size: cover;
-    padding-top: 25rem;
-    padding-bottom: 15rem;
-    max-height: 800px;
+  background: darken($white, 5%) url('../images/header-bg.jpg') no-repeat 0 center;
+  background-size: cover;
+  padding-top: 25rem;
+  padding-bottom: 15rem;
+  max-height: 800px;
 
-    @include tablet-down {
-        padding-top: 24%;
-        padding-bottom: 12%;
-    }
+  @include tablet-down {
+    padding-top: 24%;
+    padding-bottom: 12%;
+  }
 
-    @include mobile-down {
-        padding-top: 32%;
-    }
+  @include mobile-down {
+    padding-top: 32%;
+  }
 }
 
 .quote-circle-container {
-    width: $quote-circle-radius;
-    height: $quote-circle-radius;
+  width: $quote-circle-radius;
+  height: $quote-circle-radius;
 
-    @include tablet-down {
-        width: $quote-circle-small-radius;
-        height: $quote-circle-small-radius;
-    }
+  @include tablet-down {
+    width: $quote-circle-small-radius;
+    height: $quote-circle-small-radius;
+  }
 }
 
 .quote-circle {
-    border-radius: 9999px;
-    display: table-cell;
-    vertical-align: middle;
-    background-color: rgba($white, 0.98);
-    padding: $spacing-medium;
+  border-radius: 9999px;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgba($white, 0.98);
+  padding: $spacing-medium;
 
-    @include size-restricted($quote-circle-radius);
+  @include size-restricted($quote-circle-radius);
 
-    @include tablet-down {
-        @include size-restricted($quote-circle-small-radius);
-    }
+  @include tablet-down {
+    @include size-restricted($quote-circle-small-radius);
+  }
 }
 
 .quote {
-    @include reset-spacing;
-    padding-top: 1.6rem;
-    font-size: 2.1rem;
+  @include reset-spacing;
+  font-family: $heading-font;
+  padding-top: 1.6rem;
+  font-size: 2.8rem;
 
-    .big {
-        display: block;
-        font-size: 4rem;
-
-        @include tablet-down {
-            font-size: 3rem;
-        }
-    }
+  .big {
+    display: block;
+    font-size: 4.5rem;
 
     @include tablet-down {
-        font-size: 1.8rem;
+      font-size: 3.5rem;
     }
+  }
+
+  @include tablet-down {
+    font-size: 1.8rem;
+  }
 }
