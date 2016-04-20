@@ -12,8 +12,9 @@ function autoSetAge() {
   var birth = moment('18-07-1989', 'DD-MM-YYYY');
   var now = moment();
   var age = now.diff(birth, 'years');
+  var ageString = String(age) + ' year old ';
 
-  $('.js-age').text(age);
+  $('.js-age').text(ageString);
 }
 
 function toggleThumbnailViews() {
