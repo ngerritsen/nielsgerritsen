@@ -1,63 +1,36 @@
+'use strict';
+
 var $ = require('jquery');
 var moment = require('moment');
 
 $(document).ready(function () {
-  'use strict';
+  autoSetAge();
+  toggleThumbnailViews();
+});
 
-  //Smooth scrolling
-
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top - 30
-        }, 1000);
-        return false;
-      }
-    }
-  });
-
-
-  //Collapse top bar on scroll down
-  $(document).on('scroll',function(){
-    if($(document).scrollTop() > 150) {
-      $('.top-bar').addClass('collapsed');
-    } else {
-      $('.top-bar').removeClass('collapsed');
-    }
-  });
-
-  //Auto set age
+function autoSetAge() {
   var birth = moment('18-07-1989', 'DD-MM-YYYY');
   var now = moment();
   var age = now.diff(birth, 'years');
 
-  $('#age').text(age);
+  $('.js-age').text(age);
+}
 
-  //Toggle thumbnail views
-  function createPubMetaOnHandler(pubMetaId, pubIdOn) {
-    return function() {
-      $(pubMetaId).addClass('show');
-      $(pubIdOn).fadeOut(200);
-    };
-  }
+function toggleThumbnailViews() {
+  $('.js-publication').each(function () {
+    var $publication = $(this);
+    var $onToggle = $publication.find('.js-publication-on');
+    var $offToggle = $publication.find('.js-publication-off');
+    var $meta = $publication.find('.js-publication-meta');
 
-  function createPubMetaOffHandler(pubMetaId, pubIdOn) {
-    return function() {
-      $(pubMetaId).removeClass('show');
-      $(pubIdOn).fadeIn(200);
-    };
-  }
+    $onToggle.click(function () {
+      $meta.addClass('show');
+      $onToggle.fadeOut(200);
+    });
 
-  var publications = $('.publication-item').length;
-  for(var i = 0; i <= publications; i++) {
-    var pubIdOn = '#pub-' + i + '-on';
-    var pubIdOff = '#pub-' + i + '-off';
-    var pubMetaId = '#pub-' + i + '-meta';
-
-    $(pubIdOn).click(createPubMetaOnHandler(pubMetaId, pubIdOn));
-    $(pubIdOff).click(createPubMetaOffHandler(pubMetaId, pubIdOn));
-  }
-});
+    $offToggle.click(function () {
+      $meta.removeClass('show');
+      $onToggle.fadeIn(200);
+    });
+  });
+}

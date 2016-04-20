@@ -1,12 +1,12 @@
 var gulp = require('gulp');
-var autoprefixer = require('autoprefixer-core');
+var autoprefixer = require('autoprefixer');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
 var minimist = require('minimist');
 var runSequence = require('run-sequence');
 var ftp = require('vinyl-ftp');
-var del = require('del');
+var rimraf = require('rimraf');
 
 var $ = require('gulp-load-plugins')();
 var args = minimist(process.argv.slice(2));
@@ -113,20 +113,12 @@ gulp.task('ftp', function () {
     .pipe(conn.dest(remotePath));
 });
 
-gulp.task('clean', function () {
-  return gulp.src(['dist'], { read: false }).pipe($.clean());
-});
-
 gulp.task('serve', function () {
   browserSync.init({
     server: {
       baseDir: 'app'
     }
   });
-});
-
-gulp.task('clean', function (cb) {
-  del(['./dist/**'], cb);
 });
 
 gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'copy-font-awesome', 'dev-fonts', 'watch']);
@@ -139,10 +131,11 @@ gulp.task('watch', function () {
 });
 
 gulp.task('build', function () {
-  runSequence(
-    'clean',
-    'jshint',
-    ['html', 'sass', 'bundle', 'images', 'files', 'fonts', 'copy-font-awesome'],
-    ['minify-css', 'minify-js']
-  );
+  rimraf('dist', function () {
+    runSequence(
+      'jshint',
+      ['html', 'sass', 'bundle', 'images', 'files', 'fonts', 'copy-font-awesome'],
+      ['minify-css', 'minify-js']
+    );
+  })
 });
