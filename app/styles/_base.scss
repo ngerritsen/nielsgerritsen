@@ -10,7 +10,16 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: $heading-font
+  font-family: $heading-font;
+  margin-bottom: $spacing-medium;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 3.2rem;
 }
 
 p {

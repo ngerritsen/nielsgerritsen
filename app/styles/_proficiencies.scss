@@ -1,8 +1,8 @@
-.skill-list {
+.proficiency-list {
   @include reset-list;
 }
 
-.skill-item {
+.proficiency-item {
   @include clearfix;
   @include reset-list;
 
@@ -13,7 +13,7 @@
   }
 }
 
-.skill-item-code {
+.proficiency-item-code {
   background: url('../images/code-bg.jpg') no-repeat center 50% fixed;
   box-shadow: 0 8px 20px lighten($black, 5%) inset;
   background-size: cover;
