@@ -5,5 +5,5 @@ install:
   - npm install
   - bower install
 script:
-  - gulp build
+  - ./node_modules/gulp/bin/gulp.js build
 after_success: gulp ftp --user $FTP_USER --password $FTP_PASSWORD
