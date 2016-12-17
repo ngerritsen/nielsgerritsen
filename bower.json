@@ -19,11 +19,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "jquery": "~1.11.0",
-    "fontawesome": "~4.3.0",
-    "bootstrap-sass": "~3.3.4"
-  },
-  "resolutions": {
-    "bootstrap-sass-official": "~3.3.4"
+    "fontawesome": "~4.7.0",
+    "bootstrap-sass": "^3.3.7"
   }
 }
