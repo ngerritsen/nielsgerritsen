@@ -28,6 +28,7 @@
 
   text-transform: lowercase;
   word-spacing: -0.5ex;
+  white-space: nowrap;
 
   @include mobile-down() {
     font-size: 3rem;
