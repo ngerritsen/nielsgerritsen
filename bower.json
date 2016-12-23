@@ -19,7 +19,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "fontawesome": "~4.7.0",
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "fontawesome": "~4.7.0"
   }
 }

@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - "6"
+  - "7"
+cache: yarn
 install:
-  - npm install
   - bower install
 script:
   - ./node_modules/gulp/bin/gulp.js build
