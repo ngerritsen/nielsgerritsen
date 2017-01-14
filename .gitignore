@@ -10,3 +10,4 @@ app/styles/font-awesome.css
 app/fonts/fontawesome*
 app/fonts/glyphicons*
 app/scripts/bundle.js
+.DS_Store
