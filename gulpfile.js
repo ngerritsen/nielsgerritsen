@@ -79,6 +79,7 @@ gulp.task('minify-js', function() {
 
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
+    .pipe($.imagemin())
     .pipe(gulp.dest('dist/images'))
     .pipe($.size());
 });
