@@ -8,7 +8,7 @@ const runSequence = require('run-sequence')
 const ftp = require('vinyl-ftp')
 const rimraf = require('rimraf')
 const imageminMozjpeg = require('imagemin-mozjpeg')
-const imageminPngquant = require('imagemin-pngquant')
+const imageminOptipng = require('imagemin-pngquant')
 
 const $ = require('gulp-load-plugins')()
 const args = minimist(process.argv.slice(2))
@@ -83,7 +83,7 @@ gulp.task('images', function () {
   return gulp.src('app/images/**/*')
     .pipe($.imagemin([
       imageminMozjpeg(),
-      imageminPngquant({ quality: '65-80' })
+      imageminOptipng()
     ]))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size())
