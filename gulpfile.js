@@ -1,147 +1,140 @@
+'use strict'
+
 const gulp = require('gulp')
+const path = require('path')
 const autoprefixer = require('autoprefixer')
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 const browserSync = require('browser-sync').create()
-const minimist = require('minimist')
 const runSequence = require('run-sequence')
-const ftp = require('vinyl-ftp')
 const rimraf = require('rimraf')
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminOptipng = require('imagemin-pngquant')
 
-const $ = require('gulp-load-plugins')()
-const args = minimist(process.argv.slice(2))
+const plugins = require('gulp-load-plugins')()
+const browsers = [
+  'last 2 versions',
+  'ie >= 10'
+]
 
-gulp.task('sass', function(){
-  return gulp.src('app/styles/main.scss')
-    .pipe($.sass({
-      sourcemap: true,
-      style: 'compact'
-    }).on('error', $.sass.logError))
-    .pipe($.postcss([ autoprefixer({ browsers: ["> 0%"] }) ]))
-    .pipe(gulp.dest('app/styles'))
-    .pipe(browserSync.reload({stream:true}))
+let env = 'production'
+let dest = './dist'
+
+gulp.task('lint', () => {
+  return gulp.src(['./app/scripts/*.js', './*.js'])
+    .pipe(plugins.eslint())
+    .pipe(plugins.eslint.format())
+    .pipe(plugins.if(env === 'production', plugins.eslint.failAfterError()))
 })
 
-gulp.task('bundle', function() {
-  return browserify({
+gulp.task('sass', () => {
+  return gulp.src('app/styles/main.scss')
+    .pipe(
+      plugins.sass({
+        sourcemap: env === 'development',
+        style: env === 'production' ? 'compressed' : 'expanded'
+      })
+        .on('error', plugins.sass.logError)
+    )
+    .pipe(plugins.postcss([
+      autoprefixer({ browsers })
+    ]))
+    .pipe(gulp.dest(path.join(dest, 'css')))
+    .pipe(browserSync.reload({ stream: true }))
+})
+
+gulp.task('js', () => {
+  let bundler = browserify({
     entries: './app/scripts/main.js'
   })
-    .bundle()
-    .on("error", function (err) { console.log("Error : " + err.message) })
+    .transform('babelify', {
+      presets: [
+        ['env', {
+          targets: { browsers }
+        }]
+      ]
+    })
+
+  if (env === 'production') {
+    bundler = bundler.transform({ global: true }, 'uglifyify')
+  }
+
+  return bundler.bundle()
+    .on('error', err => {
+      plugins.utils.log('Error : ' + err.message)
+    })
     .pipe(source('bundle.js'))
-    .pipe(gulp.dest('./app/scripts'))
+    .pipe(gulp.dest(path.join(dest, 'js')))
 })
 
-gulp.task('jshint', function () {
-  return gulp.src(['app/scripts/**/*.js', '!app/scripts/bundle.js'])
-    .pipe($.jshint())
-    .pipe($.jshint.reporter(require('jshint-stylish')))
-    .pipe($.size())
-})
-
-
-gulp.task('files', function () {
+gulp.task('files', () => {
   return gulp.src('app/files/**/*')
-    .pipe(gulp.dest('dist/files'))
-    .pipe($.size())
+    .pipe(gulp.dest(path.join(dest, 'files')))
 })
 
-gulp.task('html', function () {
-  return gulp.src(['app/*.html', 'app/*.ico'])
-    .pipe(gulp.dest('dist'))
+gulp.task('favicon', () => {
+  return gulp.src(['app/favicon.ico'])
+    .pipe(gulp.dest(dest))
 })
 
-gulp.task('copy-font-awesome', function () {
-  gulp.src('./app/bower_components/fontawesome/css/font-awesome.css')
-    .pipe(gulp.dest('./app/styles'))
-})
-
-gulp.task('minify-css', function() {
-  const opts = {comments:true,spare:true}
-  gulp.src(['./app/**/*.css', '!./app/bower_components/**'])
-    .pipe($.minifyCss(opts))
-    .pipe(gulp.dest('./dist/'))
-    .pipe($.size({
-      showFiles: true,
-      title: 'CSS output file(s):'
-    }))
-})
-
-gulp.task('minify-js', function() {
-  gulp.src('./app/scripts/bundle.js')
-    .pipe($.uglify())
-    .pipe(gulp.dest('./dist/scripts/'))
-    .pipe($.size({
-      showFiles: true,
-      title: 'JS output file(s):'
-    }))
-})
-
-gulp.task('images', function () {
+gulp.task('images', () => {
   return gulp.src('app/images/**/*')
-    .pipe($.imagemin([
+    .pipe(plugins.imagemin([
       imageminMozjpeg(),
       imageminOptipng()
     ]))
-    .pipe(gulp.dest('dist/images'))
-    .pipe($.size())
+    .pipe(gulp.dest(path.join(dest, 'images')))
 })
 
-gulp.task('fonts', function () {
-  return fonts('dist/fonts')
-})
-
-gulp.task('dev-fonts', function () {
-  return fonts('app/fonts')
-})
-
-function fonts (dest) {
+gulp.task('fonts', () => {
   return gulp.src('app/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
-    .pipe($.flatten())
-    .pipe(gulp.dest(dest))
-    .pipe($.size())
-}
-
-gulp.task('ftp', function () {
-  const remotePath = '/public_html/nielsgerritsen/'
-  const conn = ftp.create({
-      host: 'carehr.nl',
-      user: args.user,
-      pass: args.password,
-      log: $.util.log
-  })
-
-  return gulp.src(['./dist/**'])
-    .pipe(conn.newer(remotePath))
-    .pipe(conn.dest(remotePath))
+    .pipe(plugins.filter('**/*.{eot,svg,ttf,woff,woff2}'))
+    .pipe(plugins.flatten())
+    .pipe(gulp.dest(path.join(dest, 'fonts')))
 })
 
-gulp.task('serve', function () {
+gulp.task('serve', () => {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: './.tmp'
     }
   })
 })
 
-gulp.task('default', ['sass', 'jshint', 'bundle', 'images', 'serve', 'copy-font-awesome', 'dev-fonts', 'watch'])
-
-gulp.task('watch', function () {
-  gulp.watch('app/styles/**/*.scss', ['sass'])
-  gulp.watch('app/*.html', browserSync.reload)
-  gulp.watch(['app/scripts/**/*.js', '!app/scripts/bundle.js'], ['jshint', 'bundle'])
-  gulp.watch('app/images/**/*', ['images'])
+gulp.task('html', () => {
+  gulp.src('./app/index.ejs')
+    .pipe(
+      plugins.ejs({ buildNumber: process.env.TRAVIS_BUILD_NUMBER }, null, { ext: '.html' })
+        .on('error', plugins.util.log)
+    )
+    .pipe(gulp.dest(dest))
 })
 
-gulp.task('build', function () {
-  rimraf('dist', function () {
+gulp.task('default', () => {
+  dest = './.tmp'
+  env = 'development'
+
+  runSequence(
+    ['sass', 'js', 'images', 'files', 'fonts', 'favicon'],
+    ['html', 'watch'],
+    ['serve']
+  )
+})
+
+gulp.task('watch', () => {
+  gulp.watch('app/styles/**/*.scss', ['sass'])
+  gulp.watch('app/scripts/**/*.js', ['js'])
+  gulp.watch('app/images/**/*', ['images'])
+  gulp.watch(['app/index.ejs', path.join(dest, '**/*.{js,css}')], ['html'])
+})
+
+gulp.task('build')
+
+gulp.task('build', () => {
+  rimraf('dist', () => {
     runSequence(
-      'jshint',
-      ['html', 'sass', 'bundle', 'images', 'files', 'fonts', 'copy-font-awesome'],
-      ['minify-css', 'minify-js']
+      ['sass', 'js', 'images', 'files', 'fonts', 'favicon'],
+      ['html']
     )
   })
 })

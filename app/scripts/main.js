@@ -1,37 +1,37 @@
-'use strict';
+import $ from 'jquery'
+import moment from 'moment'
 
-var $ = require('jquery');
-var moment = require('moment');
-
-$(document).ready(function () {
-  autoSetAge();
-  toggleThumbnailViews();
-});
+$(document).ready(() => {
+  autoSetAge()
+  toggleThumbnailViews()
+})
 
 function autoSetAge() {
-  var birth = moment('18-07-1989', 'DD-MM-YYYY');
-  var now = moment();
-  var age = now.diff(birth, 'years');
-  var ageString = String(age) + ' year old ';
+  const birth = moment('18-07-1989', 'DD-MM-YYYY')
+  const now = moment()
+  const age = now.diff(birth, 'years')
+  const ageString = String(age) + ' year old '
 
-  $('.js-age').text(ageString);
+  $('.js-age').text(ageString)
 }
 
 function toggleThumbnailViews() {
-  $('.js-publication').each(function () {
-    var $publication = $(this);
-    var $onToggle = $publication.find('.js-publication-on');
-    var $offToggle = $publication.find('.js-publication-off');
-    var $meta = $publication.find('.js-publication-meta');
+  $('.js-publication').each(toggleThumbnailView)
+}
 
-    $onToggle.click(function () {
-      $meta.addClass('show');
-      $onToggle.fadeOut(200);
-    });
+function toggleThumbnailView() {
+  const $publication = $(this) // eslint-disable-line no-invalid-this
+  const $onToggle = $publication.find('.js-publication-on')
+  const $offToggle = $publication.find('.js-publication-off')
+  const $meta = $publication.find('.js-publication-meta')
 
-    $offToggle.click(function () {
-      $meta.removeClass('show');
-      $onToggle.fadeIn(200);
-    });
-  });
+  $onToggle.click(() => {
+    $meta.addClass('show')
+    $onToggle.fadeOut(200)
+  })
+
+  $offToggle.click(() => {
+    $meta.removeClass('show')
+    $onToggle.fadeIn(200)
+  })
 }

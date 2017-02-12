@@ -5,4 +5,4 @@ cache: yarn
 script:
   - yarn bower
   - yarn build
-after_success: yarn deploy
+after_success: find dist -type f -exec curl -3 --ftp-create-dirs -T {} ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/ \;
