@@ -1,5 +1,6 @@
 'use strict'
 
+const fs = require('fs')
 const gulp = require('gulp')
 const path = require('path')
 const autoprefixer = require('autoprefixer')
@@ -104,7 +105,12 @@ gulp.task('serve', () => {
 gulp.task('html', () => {
   gulp.src('./app/index.ejs')
     .pipe(
-      plugins.ejs({ buildNumber: process.env.TRAVIS_BUILD_NUMBER }, null, { ext: '.html' })
+      plugins.ejs({
+        buildNumber: process.env.TRAVIS_BUILD_NUMBER,
+        criticalCssPath: path.join(dest, 'css/main.css'),
+        fs,
+        env
+      }, null, { ext: '.html' })
         .on('error', plugins.util.log)
     )
     .pipe(gulp.dest(dest))
