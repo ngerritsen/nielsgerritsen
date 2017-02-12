@@ -123,7 +123,7 @@ gulp.task('default', () => {
 
 gulp.task('watch', () => {
   gulp.watch('app/styles/**/*.scss', ['sass'])
-  gulp.watch('app/scripts/**/*.js', ['js'])
+  gulp.watch('app/scripts/**/*.js', ['lint', 'js'])
   gulp.watch('app/images/**/*', ['images'])
   gulp.watch(['app/index.ejs', path.join(dest, '**/*.{js,css}')], ['html'])
 })
