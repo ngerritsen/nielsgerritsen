@@ -15,25 +15,25 @@ const imageminOptipng = require('imagemin-pngquant')
 const plugins = require('gulp-load-plugins')()
 const browsers = [
   'last 2 versions',
-  'ie >= 10'
+  'ie > 10'
 ]
 
 let env = 'production'
 let dest = './dist'
 
 gulp.task('lint', () => {
-  return gulp.src(['./app/scripts/*.js', './*.js'])
+  return gulp.src(['./src/scripts/*.js', './*.js'])
     .pipe(plugins.eslint())
     .pipe(plugins.eslint.format())
     .pipe(plugins.if(env === 'production', plugins.eslint.failAfterError()))
 })
 
 gulp.task('sass', () => {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('src/styles/main.scss')
     .pipe(
       plugins.sass({
         sourcemap: env === 'development',
-        style: env === 'production' ? 'compressed' : 'expanded'
+        outputStyle: env === 'production' ? 'compressed' : 'expanded'
       })
         .on('error', plugins.sass.logError)
     )
@@ -46,7 +46,7 @@ gulp.task('sass', () => {
 
 gulp.task('js', () => {
   let bundler = browserify({
-    entries: './app/scripts/main.js'
+    entries: './src/scripts/main.js'
   })
     .transform('babelify', {
       presets: [
@@ -69,17 +69,17 @@ gulp.task('js', () => {
 })
 
 gulp.task('files', () => {
-  return gulp.src('app/files/**/*')
+  return gulp.src('src/files/**/*')
     .pipe(gulp.dest(path.join(dest, 'files')))
 })
 
 gulp.task('favicon', () => {
-  return gulp.src(['app/favicon.ico'])
+  return gulp.src(['src/favicon.ico'])
     .pipe(gulp.dest(dest))
 })
 
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+  return gulp.src('src/images/**/*')
     .pipe(plugins.imagemin([
       imageminMozjpeg(),
       imageminOptipng()
@@ -88,7 +88,7 @@ gulp.task('images', () => {
 })
 
 gulp.task('fonts', () => {
-  return gulp.src('app/**/*.{eot,svg,ttf,woff,woff2}')
+  return gulp.src('src/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(plugins.filter('**/*.{eot,svg,ttf,woff,woff2}'))
     .pipe(plugins.flatten())
     .pipe(gulp.dest(path.join(dest, 'fonts')))
@@ -103,7 +103,7 @@ gulp.task('serve', () => {
 })
 
 gulp.task('html', () => {
-  gulp.src('./app/index.ejs')
+  gulp.src('./src/index.ejs')
     .pipe(
       plugins.ejs({
         buildNumber: process.env.TRAVIS_BUILD_NUMBER,
@@ -128,10 +128,10 @@ gulp.task('default', () => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch('app/styles/**/*.scss', ['sass'])
-  gulp.watch('app/scripts/**/*.js', ['lint', 'js'])
-  gulp.watch('app/images/**/*', ['images'])
-  gulp.watch(['app/index.ejs', path.join(dest, '**/*.{js,css}')], ['html'])
+  gulp.watch('src/styles/**/*.scss', ['sass'])
+  gulp.watch('src/scripts/**/*.js', ['lint', 'js'])
+  gulp.watch('src/images/**/*', ['images'])
+  gulp.watch(['src/index.ejs', path.join(dest, '**/*.{js,css}')], ['html'])
 })
 
 gulp.task('build')
