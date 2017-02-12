@@ -29,7 +29,7 @@ gulp.task('lint', () => {
 })
 
 gulp.task('sass', () => {
-  return gulp.src('src/styles/main.scss')
+  return gulp.src(['src/styles/main.scss', 'src/styles/critical.scss'])
     .pipe(
       plugins.sass({
         sourcemap: env === 'development',
@@ -107,7 +107,7 @@ gulp.task('html', () => {
     .pipe(
       plugins.ejs({
         buildNumber: process.env.TRAVIS_BUILD_NUMBER,
-        criticalCssPath: path.join(dest, 'css/main.css'),
+        criticalCssPath: path.join(dest, 'css/critical.css'),
         fs,
         env
       }, null, { ext: '.html' })

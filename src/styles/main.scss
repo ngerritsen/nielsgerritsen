@@ -1,12 +1,7 @@
-$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "variables";
 @import "mixins";
-@import "base";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
 @import "buttons";
 @import "info";
-@import "intro";
 @import "publications";
-@import "proficiencies";
-@import "top-bar";
