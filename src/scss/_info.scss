@@ -1,14 +1,14 @@
 .info {
   background-color: darken($white, 8%);
-  padding: $spacing-extra-large 0;
+  padding: $spacing-lg 0;
 
-  @include mobile-down {
-    padding: $spacing-large 0;
+  @include from-sm {
+    padding: $spacing-xl 0;
   }
 }
 
 .info-button-section {
-  padding-top: $spacing-large;
+  padding-top: $spacing-lg;
 }
 
 .portrait-ball {
@@ -20,5 +20,5 @@
 }
 
 .contact-links {
-  padding-top: $spacing-medium;
+  padding-top: $spacing-md;
 }

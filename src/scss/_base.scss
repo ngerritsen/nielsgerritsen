@@ -1,6 +1,6 @@
 body {
   position: relative;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   color: $main-text-color;
   font-family: $standard-font;
@@ -11,19 +11,19 @@ h2,
 h3,
 h4 {
   font-family: $heading-font;
-  margin-bottom: $spacing-medium;
+  margin-bottom: $spacing-md;
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: 3.4rem;
 }
 
 h3 {
-  font-size: 3.2rem;
+  font-size: 3rem;
 }
 
 p {
-  margin-bottom: $spacing-medium;
+  margin-bottom: $spacing-md;
 }
 
 .page {
@@ -32,9 +32,9 @@ p {
 
 .container-fluid {
   max-width: 1280px;
-  padding: 0 $spacing-large;
+  padding: 0 $spacing-md;
 
-  @include mobile-down {
-    padding: 0 $spacing-medium;
+  @include from-sm() {
+    padding: 0 $spacing-lg;
   }
 }

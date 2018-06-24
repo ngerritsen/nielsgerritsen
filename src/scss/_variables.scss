@@ -21,7 +21,6 @@ $heading-font: 'Bariol', Helvetica, Arial, sans-serif;
 $standard-font: 'Open Sans', Helvetica, Arial, sans-serif;
 
 /* Colors */
-
 $white: #ffffff;
 $black: #000000;
 $grey: darken($white, 50%);
@@ -31,29 +30,23 @@ $main-text-color: lighten($black, 20%);
 $soft-night: #383d44;
 
 /* Spacing */
+$spacing-base: 0.8rem;
 
-$spacing-base: 1.8rem;
-
-$spacing-medium: $spacing-base;
-
-$spacing-small: $spacing-medium/2;
-$spacing-extra-small: $spacing-small/2;
-
-$spacing-large: $spacing-medium*2;
-$spacing-extra-large: $spacing-large*2;
-$spacing-jumbo: $spacing-extra-large*2;
+$spacing-xs: $spacing-base * 1;
+$spacing-sm: $spacing-base * 2;
+$spacing-md: $spacing-base * 3;
+$spacing-lg: $spacing-base * 4;
+$spacing-xl: $spacing-base * 5;
 
 /* Sizing */
-
 $top-bar-height: 12rem;
 $top-bar-mobile-height: 7rem;
 
 /* Z-Index */
-
 $z-index-top-bar: 100;
 
 /* Screen sizes */
-
-$screen-xs-max: 767px;
-$screen-sm-max: 991px;
-$screen-md-max: 1199px;
+$screen-sm-min: 576px;
+$screen-md-min: 737px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;

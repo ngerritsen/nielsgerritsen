@@ -1,0 +1,66 @@
+$quote-circle-radius: 30rem;
+$quote-circle-sm-radius: 22rem;
+
+.intro {
+  @include clearfix;
+
+  background: darken($white, 5%) url('../images/header-bg.jpg') no-repeat 0 center;
+  background-size: cover;
+  padding-top: 32%;
+  padding-bottom: 12%;
+
+  @include from-sm {
+    padding-top: 24%;
+  }
+
+  @include from-md {
+    padding-top: 25rem;
+    padding-bottom: 15rem;
+    max-height: 80rem;
+  }
+}
+
+.quote-circle-container {
+  width: $quote-circle-sm-radius;
+  height: $quote-circle-sm-radius;
+
+  @include from-md {
+    width: $quote-circle-radius;
+    height: $quote-circle-radius;
+  }
+}
+
+.quote-circle {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($white, 0.98);
+  padding: $spacing-md;
+  @include size-restricted($quote-circle-sm-radius);
+
+  @include from-md {
+    @include size-restricted($quote-circle-radius);
+  }
+}
+
+.quote {
+  @include reset-spacing;
+  font-family: $heading-font;
+  padding-top: 1.6rem;
+  font-size: 1.8rem;
+
+  .big {
+    display: block;
+    font-size: 3.5rem;
+
+    @include from-md {
+      font-size: 4.5rem;
+    }
+  }
+
+  @include from-md {
+    font-size: 2.6rem;
+  }
+}

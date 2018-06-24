@@ -1,21 +1,21 @@
 .top-bar {
-  height: $top-bar-height;
+  height: $top-bar-mobile-height;
   position: absolute;
   z-index: $z-index-top-bar;
   top: 0;
   width: 100%;
   background-color: rgba($white, 0.5);
 
-  @include tablet-down {
-    height: $top-bar-mobile-height;
+  @include from-md {
+    height: $top-bar-height;
   }
 }
 
 %top-bar-content, .top-bar-content {
-  @include vertical-center-text($top-bar-height);
+  @include vertical-center-text($top-bar-mobile-height);
 
-  @include tablet-down {
-    @include vertical-center-text($top-bar-mobile-height);
+  @include from-md {
+    @include vertical-center-text($top-bar-height);
   }
 }
 
@@ -23,14 +23,14 @@
   @include reset-spacing;
   @extend %top-bar-content;
 
-  font-size: 3.4rem;
-  font-weight: bold;
 
+  font-weight: bold;
+  font-size: 2.6rem;
   text-transform: lowercase;
   word-spacing: -0.5ex;
   white-space: nowrap;
 
-  @include mobile-down() {
+  @include from-sm {
     font-size: 3rem;
   }
 }
@@ -41,8 +41,8 @@
   @include clean-text-links($main-text-color);
 
   float: right;
-  padding: 0 $spacing-small;
-  font-size: 2rem;
+  padding: 0 $spacing-sm;
+  font-size: 1.8rem;
 
   &:hover {
     opacity: 0.8;

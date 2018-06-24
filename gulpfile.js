@@ -13,6 +13,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminOptipng = require('imagemin-pngquant')
 
 const plugins = require('gulp-load-plugins')()
+
 const browsers = [
   'last 2 versions',
   'ie > 10'
@@ -22,14 +23,14 @@ let env = 'production'
 let dest = './dist'
 
 gulp.task('lint', () => {
-  return gulp.src(['./src/scripts/*.js', './*.js'])
+  return gulp.src(['./src/js/*.js', './*.js'])
     .pipe(plugins.eslint())
     .pipe(plugins.eslint.format())
     .pipe(plugins.if(env === 'production', plugins.eslint.failAfterError()))
 })
 
 gulp.task('sass', () => {
-  return gulp.src(['src/styles/main.scss', 'src/styles/critical.scss'])
+  return gulp.src(['src/scss/main.scss', 'src/scss/critical.scss'])
     .pipe(
       plugins.sass({
         sourcemap: env === 'development',
@@ -46,7 +47,7 @@ gulp.task('sass', () => {
 
 gulp.task('js', () => {
   let bundler = browserify({
-    entries: './src/scripts/main.js'
+    entries: './src/js/index.js'
   })
     .transform('babelify', {
       presets: [
@@ -62,7 +63,7 @@ gulp.task('js', () => {
 
   return bundler.bundle()
     .on('error', err => {
-      plugins.utils.log('Error : ' + err.message)
+      plugins.util.log('Error : ' + err.message)
     })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest(path.join(dest, 'js')))
@@ -128,8 +129,8 @@ gulp.task('default', () => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch('src/styles/**/*.scss', ['sass'])
-  gulp.watch('src/scripts/**/*.js', ['lint', 'js'])
+  gulp.watch('src/scss/**/*.scss', ['sass'])
+  gulp.watch('src/js/**/*.js', ['lint', 'js'])
   gulp.watch('src/images/**/*', ['images'])
   gulp.watch(['src/index.ejs', path.join(dest, '**/*.{js,css}')], ['html'])
 })

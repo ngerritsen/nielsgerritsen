@@ -1,12 +1,12 @@
 {
   "name": "nielsgerritsen",
   "version": "0.0.0",
-  "homepage": "https://github.com/Aesthetickz/nielsgerritsen",
+  "homepage": "https://github.com/ngerritsen/nielsgerritsen",
   "authors": [
-    "Aesthetickz <n.c.gerritsen@gmail.com>"
+    "Niels Gerritsen <n.c.gerritsen@gmail.com>"
   ],
   "description": "portfolio",
-  "main": "app/index.html",
+  "main": "src/scripts/main.js",
   "moduleType": [
     "amd",
     "es6",

@@ -2,32 +2,35 @@
   color: white;
   transition: background-color 0.2s ease;
   border: 2px;
-  padding: 6px 12px;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.6rem;
-  margin-bottom: 0.8rem;
-  margin-right: 0.8rem;
+  margin-bottom: $spacing-xs;
+  margin-right: $spacing-xs;
 
   &:active, &:hover {
     box-shadow: 0 0 0 $white;
   }
 
   &.btn-large {
-    padding: 12px 24px;
+    padding: 1.2rem $spacing-md;
   }
 
   &.btn-full-display {
-    @include mobile-down {
-      width: 100%;
-      margin-right: 0;
+    width: 100%;
+    margin-right: 0;
+
+    @include from-md {
+      width: auto;
+      margin-right: $spacing-xs;
     }
   }
 }
 
 .btn {
   .fa {
-    margin-right: 8px;
+    margin-right: $spacing-xs;
   }
 }
 

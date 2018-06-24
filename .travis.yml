@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-  - "7"
-cache: yarn
+  - "8"
 script:
-  - yarn bower
-  - yarn build
+  - npm run bower
+  - npm run build
 after_success:
   - curl -3 -T dist/index.html ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/ \;
   - curl -3 -T dist/favicon.ico ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/ \;

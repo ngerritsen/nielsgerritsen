@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  extends: 'ngerritsen',
+  extends: 'eslint:recommended',
   env: {
     node: true
   },

@@ -6,10 +6,10 @@
   @include clearfix;
   @include reset-list;
 
-  padding: $spacing-extra-large 0;
+  padding: $spacing-lg 0;
 
-  @include mobile-down {
-    padding: $spacing-large 0;
+  @include from-sm {
+    padding: $spacing-xl 0;
   }
 }
 

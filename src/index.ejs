@@ -120,129 +120,72 @@
             <div class="container-fluid">
                 <h2>Publications <small>(hover for info)</small></h1>
                 <ul class="publication-list row">
-                    <li class="publication-item col-xs-12 col-sm-6 col-lg-4 js-publication">
-                        <div class="publication-inner">
-                            <img src="images/desushimeisjes-thumb.png" class="publication-image">
-                            <div class="publication-meta js-publication-meta">
-                                <h3>De Sushimeisjes</h3>
-                                <p>
-                                    De Sushimeisjes (the Sushigirls) is a webshop based on Wordpress I developed.
-                                    It features a clean, responsive design.
-                                    <a href="http://www.desushimeisjes.nl" target="_blank" title="De Sushimeisjes webshop">
-                                        www.desushimeisjes.nl
-                                    </a>
-                                </p>
+                    <% for (const publication of [
+                        {
+                            title: 'De Sushimeisjes',
+                            description: 'De Sushimeisjes (the Sushigirls) is a webshop based on Wordpress I developed. It features a clean, responsive design.',
+                            url: 'https://www.desushimeisjes.nl',
+                            thumbnail: 'desushimeisjes-thumb.jpg'
+                        },
+                        {
+                            title: 'We code the web',
+                            description: 'We code the web is a blog about front-end development, where I share my experiences and insights about web development.',
+                            url: 'https://www.wecodetheweb.com',
+                            thumbnail: 'wecodetheweb-thumb.jpg'
+                        },
+                        {
+                            title: 'CareHR',
+                            description: 'CareHR is a dutch company offering professional human resource advice in the health care sector. I made this clean and responsive informative website for CareHR.',
+                            url: 'https://www.carehr.nl',
+                            thumbnail: 'carehr-thumb.jpg'
+                        },
+                        {
+                            title: 'Libsizes',
+                            description: 'A web app with Node.js and React that calculates the sizes of Javascript libraries using Webpack. It runs on Heroku and is continuously deployed with Travis CI.',
+                            url: 'https://libsizes.nielsgerritsen.com',
+                            thumbnail: 'libsizes-thumb.jpg'
+                        },
+                        {
+                            title: 'Timiks',
+                            description: 'A Rubik\'s cube timer for speedsolvers, created using React, redux and styled-components. Optimized for adding to the homescreen of a phone as an app.',
+                            url: 'https://timiks.com',
+                            thumbnail: 'timiks-thumb.jpg'
+                        },
+                        {
+                            title: 'NPM libraries',
+                            description: 'I published some Javascript libraries on npm. Click the link to check them out.',
+                            url: 'https://www.npmjs.com/~ngerritsen',
+                            thumbnail: 'npm-thumb.jpg'
+                        }
+                    ]) { %>
+                        <li
+                          class="publication-item col-xs-12 col-sm-6 col-lg-4"
+                          data-publication
+                          data-publication-active-class="publication-meta--show"
+                        >
+                            <div class="publication-inner">
+                                <img src="images/<%- publication.thumbnail %>" alt="<%- publication.title %>" class="publication-image">
+                                <div class="publication-meta" data-publication-meta>
+                                    <h3><%- publication.title %></h3>
+                                    <p>
+                                        I published some Javascript libraries on npm. Click the link to check them out.
+                                        <a href="<%- publication.url %>" target="_blank" title="<%- publication.title %>">
+                                            <%- publication.url.replace(/^https?:\/\//, ''); %>
+                                        </a>
+                                    </p>
+                                </div>
                                 <div class="publication-toggle-wrapper">
-                                    <button class="publication-meta-toggle btn btn-primary js-publication-off">
-                                        <i class="fa fa-eye-slash"></i> Hide info
+                                    <button
+                                      data-publication-toggle
+                                      data-publication-toggle-active-content="<i class='fa fa-eye-slash'></i> Hide info"
+                                      class="publication-meta-toggle btn btn-primary"
+                                    >
+                                        <i class="fa fa-eye"></i> Show info
                                     </button>
                                 </div>
                             </div>
-                            <div class="publication-toggle-wrapper">
-                                <button class="publication-meta-toggle btn btn-primary js-publication-on">
-                                    <i class="fa fa-eye"></i> Show info
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="publication-item col-xs-12 col-sm-6 col-lg-4 js-publication">
-                        <div class="publication-inner">
-                            <img src="images/wecodetheweb-thumb.png" class="publication-image">
-                            <div class="publication-meta js-publication-meta">
-                                <h3>We code the web</h3>
-                                <p>
-                                    We code the web is a blog about front-end development, where I share my experiences and
-                                    insights about web development.
-                                    <a href="http://www.wecodetheweb.com" target="_blank" title="My webdevelopment blog">
-                                        www.wecodetheweb.com
-                                    </a>
-                                </p>
-                                <div class="publication-toggle-wrapper">
-                                    <button class="publication-meta-toggle btn btn-primary js-publication-off">
-                                        <i class="fa fa-eye-slash"></i> Hide info
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="publication-toggle-wrapper">
-                                <button class="publication-meta-toggle btn btn-primary js-publication-on">
-                                    <i class="fa fa-eye"></i> Show info
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="publication-item col-xs-12 col-sm-6 col-lg-4 js-publication">
-                        <div class="publication-inner">
-                            <img src="images/carehr-thumb.png" class="publication-image">
-                            <div class="publication-meta js-publication-meta">
-                                <h3>CareHR</h3>
-                                <p>
-                                    CareHR is a dutch company offering professional human resource advice in the health
-                                    care sector. I made this clean and responsive informative website for CareHR.
-                                    <a href="http://www.carehr.nl" target="_blank" title="CareHR HR advies in de zorg">
-                                        www.carehr.nl
-                                    </a>
-                                </p>
-                                <div class="publication-toggle-wrapper">
-                                    <button class="publication-meta-toggle btn btn-primary js-publication-off">
-                                        <i class="fa fa-eye-slash"></i> Hide info
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="publication-toggle-wrapper">
-                                <button class="publication-meta-toggle btn btn-primary js-publication-on">
-                                    <i class="fa fa-eye"></i> Show info
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="publication-item col-xs-12 col-sm-6 col-lg-4 js-publication">
-                        <div class="publication-inner">
-                            <img src="images/libsizes-thumb.png" class="publication-image">
-                            <div class="publication-meta js-publication-meta">
-                                <h3>libsizes</h3>
-                                <p>
-                                    I've built a web app with Node.js and React that calculates the sizes of Javascript libraries. It runs on Heroku and is continuously deployed with Travis CI.
-                                    <a href="http://libsizes.nielsgerritsen.com" target="_blank" title="Libsizes">
-                                        libsizes.nielsgerritsen.com
-                                    </a>
-                                </p>
-                                <div class="publication-toggle-wrapper">
-                                    <button class="publication-meta-toggle btn btn-primary js-publication-off">
-                                        <i class="fa fa-eye-slash"></i> Hide info
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="publication-toggle-wrapper">
-                                <button class="publication-meta-toggle btn btn-primary js-publication-on">
-                                    <i class="fa fa-eye"></i> Show info
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="publication-item col-xs-12 col-sm-6 col-lg-4 js-publication">
-                        <div class="publication-inner">
-                            <img src="images/npm-thumb.png" class="publication-image">
-                            <div class="publication-meta js-publication-meta">
-                                <h3>npm libraries</h3>
-                                <p>
-                                    I published some Javascript libraries on npm. Click the link to check them out.
-                                    <a href="https://www.npmjs.com/~ngerritsen" target="_blank" title="My npm account">
-                                        npmjs.com/ngerritsen
-                                    </a>
-                                </p>
-                                <div class="publication-toggle-wrapper">
-                                    <button class="publication-meta-toggle btn btn-primary js-publication-off">
-                                        <i class="fa fa-eye-slash"></i> Hide info
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="publication-toggle-wrapper">
-                                <button class="publication-meta-toggle btn btn-primary js-publication-on">
-                                    <i class="fa fa-eye"></i> Show info
-                                </button>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    <% } %>
                 </ul>
             </div>
         </section>
@@ -256,7 +199,7 @@
                     <article class="col-sm-8 col-md-9">
                         <h2>Info</h2>
 
-                        <p>My name is Niels Gerritsen, I am a <span class="js-age"></span>software developer from The Netherlands. I specialize in front-end development, using modern frameworks and tooling like React, Angular, RxJS, Webpack and SASS.</p>
+                        <p>My name is Niels Gerritsen, I am a <span data-age data-postfix=" year old "></span>software developer from The Netherlands. I specialize in front-end development, using modern frameworks and tooling like React, Angular, RxJS, Webpack and SASS.</p>
 
                         <p>I graduated with Industrial Product Design at The Hague University, but during my study I already I did a lot of web development in my spare time. After my graduation I started working as a software developer gaining a lot of experience in front- and back-end development.</p>
 

@@ -85,3 +85,27 @@
     @content;
   }
 }
+
+@mixin from-sm(){
+  @media(min-width: $screen-sm-min){
+    @content;
+  }
+}
+
+@mixin from-md(){
+  @media(min-width: $screen-md-min){
+    @content;
+  }
+}
+
+@mixin from-lg(){
+  @media(min-width: $screen-lg-min){
+    @content;
+  }
+}
+
+@mixin from-xl(){
+  @media(min-width: $screen-xl-min){
+    @content;
+  }
+}
