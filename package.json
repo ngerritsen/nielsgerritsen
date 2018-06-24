@@ -2,7 +2,7 @@
   "name": "nielsgerritsen",
   "version": "1.0.0",
   "engines": {
-    "node": ">7"
+    "node": ">8"
   },
   "license": "ISC",
   "dependencies": {
