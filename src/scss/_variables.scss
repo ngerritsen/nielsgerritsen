@@ -21,13 +21,13 @@ $heading-font: 'Bariol', Helvetica, Arial, sans-serif;
 $standard-font: 'Open Sans', Helvetica, Arial, sans-serif;
 
 /* Colors */
-$white: #ffffff;
-$black: #000000;
-$grey: darken($white, 50%);
-$light-grey: darken($white, 25%);
-$dark-grey: darken($white, 75%);
-$main-text-color: lighten($black, 20%);
-$soft-night: #383d44;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-orange: #f7b731;
+$color-green: #26de81;
+$color-grey: darken($color-white, 50%);
+$color-text: lighten($color-black, 20%);
+$color-blue: #4b7bec;
 
 /* Spacing */
 $spacing-base: 0.8rem;
@@ -37,10 +37,6 @@ $spacing-sm: $spacing-base * 2;
 $spacing-md: $spacing-base * 3;
 $spacing-lg: $spacing-base * 4;
 $spacing-xl: $spacing-base * 5;
-
-/* Sizing */
-$top-bar-height: 12rem;
-$top-bar-mobile-height: 7rem;
 
 /* Z-Index */
 $z-index-top-bar: 100;

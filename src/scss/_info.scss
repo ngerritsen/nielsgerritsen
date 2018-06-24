@@ -1,24 +1,31 @@
 .info {
-  background-color: darken($white, 8%);
-  padding: $spacing-lg 0;
+  padding: 0;
+  list-style: none;
+}
 
-  @include from-sm {
-    padding: $spacing-xl 0;
+.info__portrait {
+  text-align: center;
+}
+
+@include from-sm {
+  .info {
+    display: flex;
+  }
+
+  .info__portrait {
+    padding-top: $spacing-md;
+    min-width: 30%;
+    max-width: 30%;
+  }
+
+  .info__content {
+    margin-left: $spacing-md;
   }
 }
 
-.info-button-section {
-  padding-top: $spacing-lg;
-}
-
-.portrait-ball {
-  display: inline-block;
-  width: 100%;
-  max-height: 100%;
-  max-width: 256px;
-  border-radius: 9999px
-}
-
-.contact-links {
-  padding-top: $spacing-md;
+@include from-lg {
+  .info__portrait {
+    min-width: 25%;
+    max-width: 25%;
+  }
 }

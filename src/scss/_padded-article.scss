@@ -1,0 +1,10 @@
+@include from-md {
+  .padded-article {
+    width: 66.7%;
+  }
+
+  .padded-article--odd {
+    margin-left: 33.3%;
+    text-align: right;
+  }
+}

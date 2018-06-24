@@ -1,66 +1,49 @@
-$quote-circle-radius: 30rem;
-$quote-circle-sm-radius: 22rem;
-
 .intro {
-  @include clearfix;
-
-  background: darken($white, 5%) url('../images/header-bg.jpg') no-repeat 0 center;
+  background: darken($color-white, 5%) url('../images/header-bg.jpg') no-repeat 0 center;
   background-size: cover;
-  padding-top: 32%;
+  padding-top: 34%;
   padding-bottom: 12%;
-
-  @include from-sm {
-    padding-top: 24%;
-  }
-
-  @include from-md {
-    padding-top: 25rem;
-    padding-bottom: 15rem;
-    max-height: 80rem;
-  }
 }
 
-.quote-circle-container {
-  width: $quote-circle-sm-radius;
-  height: $quote-circle-sm-radius;
-
-  @include from-md {
-    width: $quote-circle-radius;
-    height: $quote-circle-radius;
-  }
-}
-
-.quote-circle {
-  border-radius: 50%;
+.intro__quote-circle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba($white, 0.98);
-  padding: $spacing-md;
-  @include size-restricted($quote-circle-sm-radius);
-
-  @include from-md {
-    @include size-restricted($quote-circle-radius);
-  }
+  margin: 0 auto;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background-color: rgba($color-white, 0.98);
+  text-align: center;
 }
 
-.quote {
-  @include reset-spacing;
+.intro__quote {
   font-family: $heading-font;
-  padding-top: 1.6rem;
+  margin: 0;
   font-size: 1.8rem;
+}
 
-  .big {
-    display: block;
-    font-size: 3.5rem;
+.intro__quote-big {
+  font-size: 3.5rem;
+}
 
-    @include from-md {
-      font-size: 4.5rem;
-    }
+@include from-md {
+  .intro {
+    padding-top: 25rem;
+    padding-bottom: 15rem;
   }
 
-  @include from-md {
+  .intro__quote-circle {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .intro__quote {
     font-size: 2.6rem;
+  }
+
+  .intro__quote-big {
+    font-size: 4.5rem;
   }
 }

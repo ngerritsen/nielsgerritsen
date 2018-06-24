@@ -6,7 +6,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "normalize.css": "^8.0.0"
   },
   "scripts": {
     "bower": "bower install",

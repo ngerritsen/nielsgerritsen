@@ -1,125 +1,109 @@
 <!doctype html>
 
-<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-<title>Niels Gerritsen</title>
+    <title>Niels Gerritsen</title>
 
-<meta name="description" content="Hi, I develop for the web">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name='og:site_name' content='Niels Gerritsen'>
-<meta name='og:description' content='Hi, I develop for the web'>
-<meta name='og:image' content="images/screenshot.png">
+    <meta name="description" content="Hi, I develop for the web">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name='og:site_name' content='Niels Gerritsen'>
+    <meta name='og:description' content='Hi, I develop for the web'>
+    <meta name='og:image' content="images/screenshot.png">
 
-<link rel="icon" href="./images/favicon.png">
+    <link rel="icon" href="./images/favicon.png">
 
-<script src="js/bundle.js" async></script>
+    <script src="js/bundle.js" async></script>
 
-<style>
-<%- fs.readFileSync(criticalCssPath) %>
-</style>
+    <style>
+    <%- fs.readFileSync(criticalCssPath) %>
+    </style>
 
-<% var cssPaths = [
-    'css/main.css',
-    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-    'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600'
-] %>
+    <% var cssPaths = [
+        'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600'
+    ] %>
 
-<% for (path of cssPaths) { %>
-<link rel="preload" href="<%= path %>" as="style" onload="this.rel = 'stylesheet'">
-<% } %>
+    <% for (const path of cssPaths) { %>
+        <link rel="preload" href="<%= path %>" as="style" onload="this.rel = 'stylesheet'">
+    <% } %>
 
-<noscript>
-<% for (path of cssPaths) { %>
-    <link rel="stylesheet" href="<%= path %>">
-<% } %>
-</noscript>
+    <noscript>
+    <% for (const path of cssPaths) { %>
+        <link rel="stylesheet" href="<%= path %>">
+    <% } %>
+    </noscript>
+</head>
+<body>
+    <!--[if lte IE 11]>
+        <p class="browser-support-message">
+            Sorry, but I do not support your browser.
+            <a href="http://browsehappy.com/" target="_blank">Click here to upgrade your browser.</a>
+        </p>
+  <![endif]-->
 
-<!--[if lte IE 11]>
-    <p style="z-index: 9999; background-color: white; padding: 20px; margin: 0">
-        Sorry, but I do not support your version of Internet Explorer.
-        <a href="http://browsehappy.com/" target="_blank">Click here to upgrade your browser.</a>
-    </p>
-<![endif]-->
-
-<div class="page">
     <nav class="top-bar">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-8 col-sm-4">
-                    <h1 class="website-title">Niels Gerritsen</h1>
-                </div>
-                <div class="col-xs-4 col-sm-8">
-                    <a
-                        class="blog-link"
-                        href="http://wecodetheweb.com"
-                        target="_blank"
-                        title="My webdevelopment blog"
-                    >
-                        Blog
-                    </a>
-                </div>
+            <div class="top-bar__content">
+                <h1 class="top-bar__title">Niels Gerritsen</h1>
+                <a
+                    class="top-bar__link"
+                    href="http://wecodetheweb.com"
+                    target="_blank"
+                    title="My webdevelopment blog"
+                >
+                    Blog
+                </a>
             </div>
         </div>
     </nav>
 
     <header class="intro">
         <div class="container-fluid">
-            <div class="quote-circle-container center-block">
-                <div class="quote-circle text-center">
-                    <p class="quote">
-                        Hi,
-                        <span class="big">I develop</span>
-                        for the web<br/>
-                        ..
-                    </p>
-                </div>
+            <div class="intro__quote-circle">
+                <p class="intro__quote">
+                    Hi,<br>
+                    <span class="intro__quote-big">I develop</span><br>
+                    for the web<br>
+                    ..
+                </p>
             </div>
         </div>
     </header>
 
     <main>
-        <section>
-            <ul class="proficiency-list">
-                <li class="proficiency-item">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <article class="col-xs-12 col-md-6">
-                                <h3>Web development</h3>
-
-                                <p>I develop for the web from front to back. My main expertise lies in front-end development. I'm a skilled HTML, CSS and Javascript developer. I am also capable of developing on the server side, using Node.js, PHP or C# ASP.NET. Last but not least I like to be involved in the design/UX process of a web application.</p>
-                            </article>
-                        </div>
-                    </div>
-                </li>
-                <li class="proficiency-item proficiency-item-code">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <article class="col-xs-12 col-md-6 col-md-offset-6 text-right">
-                                <h3>Javascript</h3>
-
-                                <p>I'm a Javascript enthusiast. It's the language that got me hooked on programming and is very important for the web. From designing a Javascript application architecture to implementing a new framework like React or Angular, I can do it. I'm a big advocate of <i>functional programming</i> in Javascript and in love with <a href="http://reactivex.io/" title="ReactiveX website">ReactiveX</a>.</p>
-                            </article>
-                        </div>
-                    </div>
-                </li>
-                <li class="proficiency-item">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <article class="col-xs-12 col-md-6">
-                                <h3>Learn</h3>
-
-                                <p>I find constantly learning new things manditory for being a successful developer. If I need to learn some framework, language or method, I am eager and capable to learn it fast. This makes me flexible in finding new solutions.</p>
-                            </article>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="publications">
+        <div class="section">
             <div class="container-fluid">
-                <h2>Publications <small>(hover for info)</small></h1>
-                <ul class="publication-list row">
+                <article class="padded-article">
+                    <h3>Web development</h3>
+
+                    <p>I develop for the web from front to back. My main expertise lies in front-end development. I'm a skilled HTML, CSS and Javascript developer. I am also capable of developing on the server side, using Node.js, PHP or C# ASP.NET. Last but not least I like to be involved in the design/UX process of a web application.</p>
+                </article>
+            </div>
+        </div>
+        <div class="section section--code">
+            <div class="container-fluid">
+                <article class="padded-article padded-article--odd">
+                    <h3>Javascript</h3>
+
+                    <p>I'm a Javascript enthusiast. It's the language that got me hooked on programming and is very important for the web. From designing a Javascript application architecture to implementing a new framework like React or Angular, I can do it. I'm a big advocate of <i>functional programming</i> practices in Javascript and in love with <i>ReactiveX</i>.</p>
+                </article>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <article class="padded-article">
+                    <h3>Learn</h3>
+
+                    <p>I find constantly learning new things manditory for being a successful developer. If I need to learn some framework, language or method, I am eager and capable to learn it fast. This makes me flexible in finding new solutions.</p>
+                </article>
+            </div>
+        </div>
+
+        <section class="section section--dark">
+            <div class="container-fluid">
+                <h2>Publications <small class="hidden visible-inline-from-lg">(hover for info)</small></h1>
+                <ul class="publications">
                     <% for (const publication of [
                         {
                             title: 'De Sushimeisjes',
@@ -158,29 +142,34 @@
                             thumbnail: 'npm-thumb.jpg'
                         }
                     ]) { %>
-                        <li
-                          class="publication-item col-xs-12 col-sm-6 col-lg-4"
-                          data-publication
-                          data-publication-active-class="publication-meta--show"
-                        >
-                            <div class="publication-inner">
-                                <img src="images/<%- publication.thumbnail %>" alt="<%- publication.title %>" class="publication-image">
-                                <div class="publication-meta" data-publication-meta>
-                                    <h3><%- publication.title %></h3>
-                                    <p>
+                        <li class="publications__item">
+                            <div
+                                class="publication"
+                                data-publication
+                                data-publication-active-class="publication__meta--show"
+                            >
+                                <img src="images/<%- publication.thumbnail %>" alt="<%- publication.title %>" class="publication__image">
+                                <div class="publication__meta" data-publication-meta>
+                                    <h3 class="publication__title"><%- publication.title %></h3>
+                                    <p class="publication__description">
                                         I published some Javascript libraries on npm. Click the link to check them out.
-                                        <a href="<%- publication.url %>" target="_blank" title="<%- publication.title %>">
-                                            <%- publication.url.replace(/^https?:\/\//, ''); %>
-                                        </a>
                                     </p>
+                                    <a
+                                        class="publication__link"
+                                        href="<%- publication.url %>"
+                                        target="_blank"
+                                        title="<%- publication.title %>"
+                                    >
+                                        <%- publication.url.replace(/^https?:\/\//, ''); %>
+                                    </a>
                                 </div>
-                                <div class="publication-toggle-wrapper">
+                                <div class="publication__toggle-wrapper hidden-from-lg">
                                     <button
                                       data-publication-toggle
-                                      data-publication-toggle-active-content="<i class='fa fa-eye-slash'></i> Hide info"
-                                      class="publication-meta-toggle btn btn-primary"
+                                      data-publication-toggle-active-content="<i class='button__icon fa fa-eye-slash'></i> Hide info"
+                                      class="publication__toggle button button--primary button--small"
                                     >
-                                        <i class="fa fa-eye"></i> Show info
+                                        <i class="button__icon fa fa-eye"></i> Show info
                                     </button>
                                 </div>
                             </div>
@@ -190,79 +179,79 @@
             </div>
         </section>
 
-        <section class="info">
-            <div class="container-fluid info-section">
-                <div class="row">
-                    <figure class="portrait-ball-container text-center col-xs-12 col-sm-4 col-md-3">
+        <section class="section section--grey">
+            <div class="container-fluid">
+                <article class="info">
+                    <div class="info__portrait">
                         <img src="images/portrait.jpg" class="portrait-ball">
-                    </figure>
-                    <article class="col-sm-8 col-md-9">
+                    </div>
+
+                    <div class="info__content">
                         <h2>Info</h2>
 
                         <p>My name is Niels Gerritsen, I am a <span data-age data-postfix=" year old "></span>software developer from The Netherlands. I specialize in front-end development, using modern frameworks and tooling like React, Angular, RxJS, Webpack and SASS.</p>
 
                         <p>I graduated with Industrial Product Design at The Hague University, but during my study I already I did a lot of web development in my spare time. After my graduation I started working as a software developer gaining a lot of experience in front- and back-end development.</p>
 
-                        <p class="contact-links">
-                          <a
-                              href="https://twitter.com/NielsG89"
-                              class="btn btn-primary btn-large btn-full-display"
-                              target="_blank"
-                              title="Follow @NielsG89 on Twitter"
-                          >
-                              <i class="fa fa-twitter"></i> Follow
-                          </a>
-                          <a
-                              href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b"
-                              class="btn btn-primary btn-large btn-full-display"
-                              target="_blank"
-                              title="Connect to Niels Gerritsen on LinkedIn"
-                          >
-                              <i class="fa fa-linkedin-square"></i> Connect
-                          </a>
-                          <a
-                              href="https://github.com/ngerritsen"
-                              class="btn btn-primary btn-large btn-full-display"
-                              target="_blank"
-                              title="Check me out on GitHub"
-                          >
-                              <i class="fa fa-github"></i> Collab
-                          </a>
-                          <a  href="/files/cv-niels-gerritsen.pdf"
-                              class="btn btn-success btn-large btn-full-display"
-                              download
-                              title="Download my CV"
-                          >
-                              <i class="fa fa-file-text"></i>Curriculum Vitae
-                          </a>
-                      </p>
-                    </article>
-                </div>
+                        <p>
+                            <a
+                                href="https://twitter.com/NielsG89"
+                                class="button button--primary button--list-item"
+                                target="_blank"
+                                title="Follow @NielsG89 on Twitter"
+                            >
+                                <i class="button__icon fa fa-twitter"></i> Follow
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b"
+                                class="button button--primary button--list-item"
+                                target="_blank"
+                                title="Connect to Niels Gerritsen on LinkedIn"
+                            >
+                                <i class="button__icon fa fa-linkedin-square"></i> Connect
+                            </a>
+                            <a
+                                href="https://github.com/ngerritsen"
+                                class="button button--primary button--list-item"
+                                target="_blank"
+                                title="Check me out on GitHub"
+                            >
+                                <i class="button__icon fa fa-github"></i> Collab
+                            </a>
+                            <a  href="/files/cv-niels-gerritsen.pdf"
+                                class="button button--success button--list-item"
+                                download
+                                title="Download my CV"
+                            >
+                                <i class="button__icon fa fa-file-text"></i>Curriculum Vitae
+                            </a>
+                        </p>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
-</div>
 
-<script>
-    (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] =
-                function () {
-                    (b[l].q = b[l].q || []).push(arguments)
-                });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = '//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-39696629-1');
-    ga('send', 'pageview');
-</script>
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                    function () {
+                        (b[l].q = b[l].q || []).push(arguments)
+                    });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-39696629-1');
+        ga('send', 'pageview');
+    </script>
 
-<script>
- /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
-(function(w){"use strict";var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,before?ref:ref.nextSibling)});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}setTimeout(function(){onloadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}ss.media=media||"all"}if(ss.addEventListener){ss.addEventListener("load",loadCB)}ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}})(typeof global!=="undefined"?global:this);(function(w){if(!w.loadCSS){return}var rp=loadCSS.relpreload={};rp.support=function(){try{return w.document.createElement("link").relList.supports("preload")}catch(e){}};rp.poly=function(){var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"){w.loadCSS(link.href,link);link.rel=null}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,300);if(w.addEventListener){w.addEventListener("load",function(){w.clearInterval(run)})}}})(this);
-</script>
-
+    <script>
+    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    (function(w){"use strict";var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,before?ref:ref.nextSibling)});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}setTimeout(function(){onloadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}ss.media=media||"all"}if(ss.addEventListener){ss.addEventListener("load",loadCB)}ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}})(typeof global!=="undefined"?global:this);(function(w){if(!w.loadCSS){return}var rp=loadCSS.relpreload={};rp.support=function(){try{return w.document.createElement("link").relList.supports("preload")}catch(e){}};rp.poly=function(){var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"){w.loadCSS(link.href,link);link.rel=null}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,300);if(w.addEventListener){w.addEventListener("load",function(){w.clearInterval(run)})}}})(this);
+    </script>
+</body>
 <!-- Build number: <%= buildNumber %> -->

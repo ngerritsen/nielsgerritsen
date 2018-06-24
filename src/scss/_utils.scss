@@ -1,0 +1,19 @@
+.hidden {
+  display: none;
+}
+
+@include from-md {
+  .float-left-from-md {
+    float: left;
+  }
+}
+
+@include from-lg {
+  .visible-inline-from-lg {
+    display: inline;
+  }
+
+  .hidden-from-lg {
+    display: none;
+  }
+}

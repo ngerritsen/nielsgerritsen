@@ -1,41 +1,43 @@
-.btn {
-  color: white;
+.button,
+.button:visited {
+  display: inline-block;
+  color: $color-white;
+  cursor: pointer;
   transition: background-color 0.2s ease;
   border: 2px;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 0.8rem;
   font-weight: bold;
   font-size: 1.6rem;
+  margin: 0;
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $color-white;
+    text-decoration: none;
+    box-shadow: 0 0 0 $color-white;
+  }
+}
+
+.button--list-item {
+  width: 100%;
   margin-bottom: $spacing-xs;
+}
+
+.button--small {
+  font-size: 1.4rem;
+  padding: $spacing-xs $spacing-sm;
+}
+
+.button__icon {
   margin-right: $spacing-xs;
-
-  &:active, &:hover {
-    box-shadow: 0 0 0 $white;
-  }
-
-  &.btn-large {
-    padding: 1.2rem $spacing-md;
-  }
-
-  &.btn-full-display {
-    width: 100%;
-    margin-right: 0;
-
-    @include from-md {
-      width: auto;
-      margin-right: $spacing-xs;
-    }
-  }
 }
 
-.btn {
-  .fa {
-    margin-right: $spacing-xs;
-  }
-}
-
-.btn-success {
-  $bg-color: desaturate(#2ecc71, 10%);
+.button--primary,
+.button--primary:visited {
+  $bg-color: desaturate($color-blue, 10%);
   background-color: $bg-color;
 
   &:hover,
@@ -43,5 +45,25 @@
   &:active,
   &:focus {
     background-color: darken($bg-color, 10%);
+  }
+}
+
+.button--success,
+.button--success:visited {
+  $bg-color: desaturate($color-green, 10%);
+  background-color: $bg-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+@include from-sm {
+  .button--list-item {
+    width: auto;
+    margin-right: $spacing-xs;
+    margin-bottom: $spacing-sm;
   }
 }

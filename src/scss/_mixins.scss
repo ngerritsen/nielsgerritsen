@@ -41,7 +41,7 @@
   $hover-offset: 30%;
   $hover-color: lighten($color, $hover-offset);
 
-  @if lightness($color) > lightness($grey){
+  @if lightness($color) > lightness($color-grey){
     $hover-color: darken($hover-offset);
   }
 
@@ -61,31 +61,6 @@
 }
 
 /* Responsive */
-
-@mixin mobile-down(){
-  @media(max-width: $screen-xs-max){
-    @content;
-  }
-}
-
-@mixin tablet-down(){
-  @media(max-width: $screen-sm-max){
-    @content;
-  }
-}
-
-@mixin desktop-down(){
-  @media(max-width: $screen-md-max){
-    @content;
-  }
-}
-
-@mixin hd-down(){
-  @media(max-width: $screen-lg-max){
-    @content;
-  }
-}
-
 @mixin from-sm(){
   @media(min-width: $screen-sm-min){
     @content;
