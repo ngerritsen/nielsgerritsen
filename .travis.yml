@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "8"
 script:
-  - npm run bower
   - npm run build
 after_success:
   - curl -3 -T dist/index.html ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/ \;

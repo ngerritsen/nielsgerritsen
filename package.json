@@ -10,7 +10,6 @@
     "normalize.css": "^8.0.0"
   },
   "scripts": {
-    "bower": "bower install",
     "build": "gulp build"
   },
   "devDependencies": {
