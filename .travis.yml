@@ -4,10 +4,5 @@ node_js:
 script:
   - npm run build
 after_success:
-  - curl -3 -T dist/index.html ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/ \;
-  - curl -3 -T dist/favicon.ico ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/ \;
-  - find dist/js -type f -exec curl -3 --ftp-create-dirs -T {} ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/js/ \;
-  - find dist/images -type f -exec curl -3 --ftp-create-dirs -T {} ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/images/ \;
-  - find dist/fonts -type f -exec curl -3 --ftp-create-dirs -T {} ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/fonts/ \;
-  - find dist/files -type f -exec curl -3 --ftp-create-dirs -T {} ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/files/ \;
-  - find dist/css -type f -exec curl -3 --ftp-create-dirs -T {} ftp://$FTP_USER:$FTP_PASSWORD@ftp.carehr.nl/public_html/nielsgerritsen/css/ \;
+  - cd dist; zip -r ../nielsgerritsen.zip *; cd ..
+  - "curl -F 'data=@nielsgerritsen.zip' -H 'X-Key: '$DEPLOY_KEY -H 'X-ExtractTo: nielsgerritsen' https://carehr.nl/deploy/"
