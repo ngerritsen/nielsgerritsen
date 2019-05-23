@@ -3,6 +3,8 @@ node_js:
   - "8"
 script:
   - npm run build
-after_success:
-  - cd dist; zip -r ../nielsgerritsen.zip *; cd ..
-  - "curl -F 'data=@nielsgerritsen.zip' -H 'X-Key: '$DEPLOY_KEY -H 'X-ExtractTo: nielsgerritsen' https://carehr.nl/deploy/"
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: "$FIREBASE_TOKEN"
