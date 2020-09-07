@@ -1,16 +1,16 @@
-@import "../../node_modules/normalize.css/normalize.css";
+@import './normalize.scss';
 
-@import "variables";
-@import "mixins";
+@import './variables.scss';
+@import './mixins.scss';
 
-@import "base";
-@import "buttons";
-@import "info";
-@import "intro";
-@import "padded-article";
-@import "portrait-ball";
-@import "publication";
-@import "publications";
-@import "section";
-@import "top-bar";
-@import "utils";
+@import './base.scss';
+@import './buttons.scss';
+@import './info.scss';
+@import './intro.scss';
+@import './padded-article.scss';
+@import './portrait-ball.scss';
+@import './publication.scss';
+@import './publications.scss';
+@import './section.scss';
+@import './top-bar.scss';
+@import './utils.scss';

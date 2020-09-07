@@ -11,14 +11,6 @@
     <meta name='og:description' content='Hi, I develop for the web'>
     <meta name='og:image' content="images/screenshot.png">
 
-    <link rel="icon" href="./images/favicon.png">
-
-    <script src="js/bundle.js" async></script>
-
-    <style>
-    <%- fs.readFileSync(criticalCssPath) %>
-    </style>
-
     <% var cssPaths = [
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
         'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600'
@@ -33,6 +25,9 @@
         <link rel="stylesheet" href="<%= path %>">
     <% } %>
     </noscript>
+
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="./scss/main.scss">
 </head>
 <body>
     <!--[if lt IE 11]>
@@ -109,7 +104,7 @@
 
         <section class="section section--dark">
             <div class="container-fluid">
-                <h2>Publications <small class="hidden visible-inline-from-lg">(hover for info)</small></h1>
+                <h2>Publications <small class="hidden visible-inline-from-lg">(hover for info)</small></h2>
                 <ul class="publications">
                     <% for (const publication of [
                         {
@@ -137,16 +132,22 @@
                             thumbnail: 'audiotour-thumb.jpg'
                         },
                         {
-                            title: 'Libsizes',
-                            description: 'A web app with Node.js and React that calculates the sizes of Javascript libraries using Webpack. It runs on Heroku and is continuously deployed with Travis CI.',
-                            url: 'https://libsizes.nielsgerritsen.com',
-                            thumbnail: 'libsizes-thumb.jpg'
+                            title: 'dessingHRadvies',
+                            description: 'dessingHRadvies is a company in the Netherlands offering human resource advice, focussing on Management Drives.',
+                            url: 'https://dessinghradvies.nl',
+                            thumbnail: 'dessing-hr-advies-thumb.jpg'
                         },
                         {
                             title: 'Timiks',
                             description: 'A Rubik\'s cube timer for speedsolvers, created using React, redux and styled-components. Optimized for adding to the homescreen of a phone as an app.',
                             url: 'https://timiks.com',
                             thumbnail: 'timiks-thumb.jpg'
+                        },
+                        {
+                            title: 'Calculory',
+                            description: 'A sleek, zero dependency calculator created with vanilla Javascript, built with Parcel.',
+                            url: 'https://calculory.netlify.app',
+                            thumbnail: 'calculory-thumb.jpg'
                         },
                         {
                             title: 'NPM libraries',
@@ -196,7 +197,7 @@
             <div class="container-fluid">
                 <article class="info">
                     <div class="info__portrait">
-                        <img src="images/portrait.jpg" class="portrait-ball">
+                        <img src="images/portrait.jpg" alt="Niels Gerritsen" class="portrait-ball">
                     </div>
 
                     <div class="info__content">
@@ -213,7 +214,7 @@
                                 target="_blank"
                                 title="Follow @NielsG89 on Twitter"
                             >
-                                <i class="button__icon fa fa-twitter"></i> Follow
+                                <i class="button__icon fa fa-twitter" aria-hidden="true"></i> Follow
                             </a>
                             <a
                                 href="https://www.linkedin.com/pub/niels-gerritsen/26/955/10b"
@@ -221,7 +222,7 @@
                                 target="_blank"
                                 title="Connect to Niels Gerritsen on LinkedIn"
                             >
-                                <i class="button__icon fa fa-linkedin-square"></i> Connect
+                                <i class="button__icon fa fa-linkedin-square" aria-hidden="true"></i> Connect
                             </a>
                             <a
                                 href="https://github.com/ngerritsen"
@@ -229,14 +230,14 @@
                                 target="_blank"
                                 title="Check me out on GitHub"
                             >
-                                <i class="button__icon fa fa-github"></i> Collab
+                                <i class="button__icon fa fa-github" aria-hidden="true"></i> Collab
                             </a>
                             <a  href="/files/cv-niels-gerritsen.pdf"
                                 class="button button--success button--list-item"
                                 download
                                 title="Download my CV"
                             >
-                                <i class="button__icon fa fa-file-text"></i>Curriculum Vitae
+                                <i class="button__icon fa fa-file-text" aria-hidden="true"></i>Curriculum Vitae
                             </a>
                         </p>
                     </div>
@@ -245,26 +246,21 @@
         </section>
     </main>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39696629-1"></script>
     <script>
-        (function (b, o, i, l, e, r) {
-            b.GoogleAnalyticsObject = l;
-            b[l] || (b[l] =
-                    function () {
-                        (b[l].q = b[l].q || []).push(arguments)
-                    });
-            b[l].l = +new Date;
-            e = o.createElement(i);
-            r = o.getElementsByTagName(i)[0];
-            e.src = '//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e, r)
-        }(window, document, 'script', 'ga'));
-        ga('create', 'UA-39696629-1');
-        ga('send', 'pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-39696629-1');
     </script>
 
     <script>
-    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
-    (function(w){"use strict";var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,before?ref:ref.nextSibling)});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}setTimeout(function(){onloadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}ss.media=media||"all"}if(ss.addEventListener){ss.addEventListener("load",loadCB)}ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}})(typeof global!=="undefined"?global:this);(function(w){if(!w.loadCSS){return}var rp=loadCSS.relpreload={};rp.support=function(){try{return w.document.createElement("link").relList.supports("preload")}catch(e){}};rp.poly=function(){var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"){w.loadCSS(link.href,link);link.rel=null}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,300);if(w.addEventListener){w.addEventListener("load",function(){w.clearInterval(run)})}}})(this);
+        /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+        (function(w){"use strict";var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,before?ref:ref.nextSibling)});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}setTimeout(function(){onloadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}ss.media=media||"all"}if(ss.addEventListener){ss.addEventListener("load",loadCB)}ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}})(typeof global!=="undefined"?global:this);(function(w){if(!w.loadCSS){return}var rp=loadCSS.relpreload={};rp.support=function(){try{return w.document.createElement("link").relList.supports("preload")}catch(e){}};rp.poly=function(){var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"){w.loadCSS(link.href,link);link.rel=null}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,300);if(w.addEventListener){w.addEventListener("load",function(){w.clearInterval(run)})}}})(this);
     </script>
+
+    <script src="./js/index.js" async></script>
 </body>
-<!-- Build number: <%= buildNumber %> -->
+

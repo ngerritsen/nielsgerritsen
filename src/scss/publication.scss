@@ -33,7 +33,8 @@
 }
 
 .publication__description {
-  font-size: 0.85em;
+  font-size: 0.9em;
+  line-height: 1.4;
   margin: 0 0 $spacing-xxs;
 }
 
@@ -41,6 +42,7 @@
 .publication__link:visited {
   $color: saturate(lighten($color-blue, 15%), 15%);
   color: $color;
+  font-size: 0.9em;
 
   &:hover,
   &:focus,
@@ -50,7 +52,7 @@
 }
 
 .publication__toggle {
-  box-shadow: 0 1px 6px rgba($color-black, .5);
+  box-shadow: 0 1px 6px rgba($color-black, 0.5);
 }
 
 .publication__toggle-wrapper {

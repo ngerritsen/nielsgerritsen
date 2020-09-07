@@ -30,7 +30,7 @@
   height: $height;
 }
 
-@mixin size-restricted($width, $height: $width){
+@mixin size-restricted($width, $height: $width) {
   width: $width;
   max-width: $width;
   height: $height;
@@ -41,7 +41,7 @@
   $hover-offset: 30%;
   $hover-color: lighten($color, $hover-offset);
 
-  @if lightness($color) > lightness($color-grey){
+  @if lightness($color) > lightness($color-grey) {
     $hover-color: darken($hover-offset);
   }
 
@@ -61,26 +61,26 @@
 }
 
 /* Responsive */
-@mixin from-sm(){
-  @media(min-width: $screen-sm-min){
+@mixin from-sm() {
+  @media (min-width: $screen-sm-min) {
     @content;
   }
 }
 
-@mixin from-md(){
-  @media(min-width: $screen-md-min){
+@mixin from-md() {
+  @media (min-width: $screen-md-min) {
     @content;
   }
 }
 
-@mixin from-lg(){
-  @media(min-width: $screen-lg-min){
+@mixin from-lg() {
+  @media (min-width: $screen-lg-min) {
     @content;
   }
 }
 
-@mixin from-xl(){
-  @media(min-width: $screen-xl-min){
+@mixin from-xl() {
+  @media (min-width: $screen-xl-min) {
     @content;
   }
 }

@@ -1,20 +1,20 @@
 /* Fonts */
 
 @font-face {
-    font-family: Bariol;
-    src: url(../fonts/bariol.woff);
+  font-family: Bariol;
+  src: url(../fonts/bariol.woff);
 }
 
 @font-face {
-    font-family: Bariol;
-    src: url(../fonts/bariol-italic.woff);
-    font-style: italic;
+  font-family: Bariol;
+  src: url(../fonts/bariol-italic.woff);
+  font-style: italic;
 }
 
 @font-face {
-    font-family: Bariol;
-    src: url(../fonts/bariol-bold.woff);
-    font-weight: bold;
+  font-family: Bariol;
+  src: url(../fonts/bariol-bold.woff);
+  font-weight: bold;
 }
 
 $heading-font: 'Bariol', Helvetica, Arial, sans-serif;

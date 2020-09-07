@@ -11,7 +11,9 @@ function initPublicationThumbnail(el) {
   const toggleEl = el.querySelector('[data-publication-toggle]');
   const activeClass = el.getAttribute('data-publication-active-class');
   const metaEl = el.querySelector('[data-publication-meta]');
-  const activeToggleContent = toggleEl.getAttribute('data-publication-toggle-active-content');
+  const activeToggleContent = toggleEl.getAttribute(
+    'data-publication-toggle-active-content'
+  );
   const initialToggleContent = toggleEl.innerHTML;
 
   toggleEl.addEventListener('click', () => {
@@ -23,5 +25,5 @@ function initPublicationThumbnail(el) {
 
     metaEl.classList.remove(activeClass);
     toggleEl.innerHTML = initialToggleContent;
-  })
+  });
 }
