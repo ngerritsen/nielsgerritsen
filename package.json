@@ -15,8 +15,10 @@
     "fix": "prettier --write ."
   },
   "devDependencies": {
+    "ejs": "^3.1.5",
     "parcel": "^1.12.4",
     "parcel-plugin-ejs-template": "^0.2.0",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "sass": "^1.26.10"
   }
 }
