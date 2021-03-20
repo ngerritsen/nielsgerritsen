@@ -6,7 +6,7 @@
   transition: background-color 0.2s ease;
   border: 2px;
   padding: $spacing-sm $spacing-md;
-  border-radius: 0.8rem;
+  border-radius: 99rem;
   font-weight: bold;
   font-size: 1.6rem;
   margin: 0;
@@ -37,26 +37,25 @@
 
 .button--primary,
 .button--primary:visited {
-  $bg-color: desaturate($color-blue, 10%);
+  $bg-color: $color-blue;
   background-color: $bg-color;
 
   &:hover,
-  &:visited,
   &:active,
   &:focus {
-    background-color: darken($bg-color, 10%);
+    background-color: darken($color-blue, 10%);
   }
 }
 
 .button--success,
 .button--success:visited {
-  $bg-color: desaturate($color-green, 10%);
+  $bg-color: $color-green;
   background-color: $bg-color;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: darken($bg-color, 10%);
+    background-color: darken($color-green, 10%);
   }
 }
 
