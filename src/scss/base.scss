@@ -63,7 +63,7 @@ p {
 @include from-md {
   .container-fluid {
     padding: 0 $spacing-lg;
-    max-width: 1180px;
+    max-width: 100rem;
     margin: 0 auto;
   }
 }

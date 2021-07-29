@@ -2,8 +2,8 @@
   background: darken($color-white, 5%) url('../images/header-bg.jpg') no-repeat
     0 center;
   background-size: cover;
-  padding-top: 34%;
-  padding-bottom: 12%;
+  padding-top: 20%;
+  padding-bottom: 20%;
 }
 
 .intro__quote-circle {
@@ -11,18 +11,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 22rem;
   height: 22rem;
   border-radius: 50%;
-  background-color: rgba($color-white, 0.98);
+  background-color: $color-white;
   text-align: center;
 }
 
 .intro__quote {
   font-family: $heading-font;
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
+  top: -0.8rem;
 }
 
 .intro__quote-big {
@@ -31,7 +32,7 @@
 
 @include from-md {
   .intro {
-    padding-top: 25rem;
+    padding-top: 15rem;
     padding-bottom: 15rem;
   }
 
@@ -41,7 +42,7 @@
   }
 
   .intro__quote {
-    font-size: 2.6rem;
+    font-size: 3.2rem;
   }
 
   .intro__quote-big {
