@@ -12,22 +12,24 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto 20px;
-  width: 22rem;
-  height: 22rem;
+  width: 24rem;
+  height: 24rem;
   border-radius: 50%;
   background-color: $color-white;
   text-align: center;
 }
 
 .intro__quote {
+  position: relative;
   font-family: $heading-font;
   margin: 0;
-  font-size: 2.1rem;
+  font-size: 3rem;
+  line-height: 1.4;
   top: -0.8rem;
 }
 
 .intro__quote-big {
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 
 @include from-md {
@@ -42,10 +44,10 @@
   }
 
   .intro__quote {
-    font-size: 3.2rem;
+    font-size: 3.6rem;
   }
 
   .intro__quote-big {
-    font-size: 4.5rem;
+    font-size: 4.8rem;
   }
 }

@@ -23,10 +23,11 @@ $standard-font: 'Open Sans', Helvetica, Arial, sans-serif;
 /* Colors */
 $color-white: #ffffff;
 $color-black: #000000;
-$color-green: #26de81;
+$color-dark: lighten($color-black, 8%);
 $color-grey: darken($color-white, 50%);
-$color-text: lighten($color-black, 20%);
-$color-blue: #4b7bec;
+$color-lightgrey: darken($color-white, 14%);
+$color-text: $color-dark;
+$color-blue: #3498db;
 
 /* Spacing */
 $spacing-base: 0.8rem;

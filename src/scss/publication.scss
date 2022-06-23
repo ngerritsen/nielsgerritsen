@@ -38,17 +38,8 @@
   margin: 0 0 $spacing-xxs;
 }
 
-.publication__link,
-.publication__link:visited {
-  $color: saturate(lighten($color-blue, 15%), 15%);
-  color: $color;
-  font-size: 0.9em;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color;
-  }
+.publication__link {
+  @include link-theme($color-blue);
 }
 
 .publication__toggle {

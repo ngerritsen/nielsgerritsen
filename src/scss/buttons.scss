@@ -1,7 +1,6 @@
 .button,
 .button:visited {
   display: inline-block;
-  color: $color-white;
   cursor: pointer;
   transition: background-color 0.2s ease;
   border: 2px;
@@ -15,10 +14,11 @@
   &:active,
   &:hover,
   &:focus {
-    color: $color-white;
     text-decoration: none;
     box-shadow: 0 0 0 $color-white;
   }
+
+  @include button-theme($color-dark, $color-white);
 }
 
 .button--list-item {
@@ -35,29 +35,11 @@
   margin-right: $spacing-xs;
 }
 
-.button--primary,
-.button--primary:visited {
-  $bg-color: $color-blue;
-  background-color: $bg-color;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: darken($color-blue, 10%);
-  }
+.button--link,
+.button--link:visited {
+  @include button-theme($color-lightgrey, $color-dark);
 }
 
-.button--success,
-.button--success:visited {
-  $bg-color: $color-green;
-  background-color: $bg-color;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: darken($color-green, 10%);
-  }
-}
 
 @include from-sm {
   .button--list-item {

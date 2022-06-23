@@ -37,19 +37,46 @@
   max-height: $height;
 }
 
-@mixin clean-text-links($color) {
-  $hover-offset: 30%;
+@mixin button-theme($bg-color, $fg-color) {
+  $hover-offset: 10%;
+  $hover-color: darken($bg-color, $hover-offset);
+
+  @if lightness($bg-color) < lightness($fg-color) {
+    $hover-color: lighten($bg-color, $hover-offset);
+  }
+
+  background-color: $bg-color;
+  color: $fg-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $hover-color;
+    color: $fg-color;
+  }
+
+  &:visited {
+    color: $fg-color;
+  }
+}
+
+@mixin link-theme($color) {
+  $hover-offset: 10%;
   $hover-color: lighten($color, $hover-offset);
 
   @if lightness($color) > lightness($color-grey) {
-    $hover-color: darken($hover-offset);
+    $hover-color: darken($color, $hover-offset);
   }
 
   text-decoration: none;
   color: $color;
 
   &:hover,
-  &:active {
+  &:hover:visited,
+  &:active,
+  &:active:visited,
+  &:focus,
+  &:focus:visited {
     text-decoration: none;
     color: $hover-color;
   }

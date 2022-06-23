@@ -17,16 +17,8 @@ body {
   margin: 0;
 }
 
-a,
-a:visited {
-  color: $color-blue;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color-blue;
-    text-decoration: underline;
-  }
+a {
+  @include link-theme($color-dark);
 }
 
 h1,

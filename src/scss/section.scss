@@ -10,12 +10,8 @@
 }
 
 .section--dark {
-  color: darken($color-white, 10%);
-  background-color: lighten($color-black, 10%);
-}
-
-.section--grey {
-  background-color: darken($color-white, 8%);
+  color: $color-white;
+  background-color: $color-dark;
 }
 
 @include from-md {
