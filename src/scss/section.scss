@@ -3,7 +3,7 @@
 }
 
 .section--code {
-  background: url('../images/code-bg.jpg') no-repeat center 50% fixed;
+  background: url('../images/code-bg.jpg') no-repeat center 50%;
   box-shadow: 0 8px 20px lighten($color-black, 5%) inset;
   background-size: cover;
   color: $color-white;
@@ -17,5 +17,9 @@
 @include from-md {
   .section {
     padding: $spacing-xl 0;
+  }
+
+  .section--code {
+    background-attachment: fixed;
   }
 }
