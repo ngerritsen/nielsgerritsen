@@ -1,1 +1,3 @@
-![build](https://travis-ci.org/ngerritsen/nielsgerritsen.svg)
+# nielsgerritsen
+
+My personal website
