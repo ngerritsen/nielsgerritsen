@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 *,
 *:before,
 *:after {
@@ -12,21 +15,21 @@ body {
   position: relative;
   font-size: 1.6rem;
   line-height: 1.6;
-  color: $color-text;
-  font-family: $standard-font;
+  color: variables.$color-text;
+  font-family: variables.$standard-font;
   margin: 0;
 }
 
 a {
-  @include link-theme($color-dark);
+  @include mixins.link-theme(variables.$color-dark);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: $heading-font;
-  margin-bottom: $spacing-md;
+  font-family: variables.$heading-font;
+  margin-bottom: variables.$spacing-md;
   line-height: 1.3;
 
   small {
@@ -45,16 +48,16 @@ h3 {
 }
 
 p {
-  margin-bottom: $spacing-md;
+  margin-bottom: variables.$spacing-md;
 }
 
 .container-fluid {
-  padding: 0 $spacing-md;
+  padding: 0 variables.$spacing-md;
 }
 
-@include from-md {
+@include mixins.from-md {
   .container-fluid {
-    padding: 0 $spacing-lg;
+    padding: 0 variables.$spacing-lg;
     max-width: 100rem;
     margin: 0 auto;
   }

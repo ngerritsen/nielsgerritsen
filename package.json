@@ -20,6 +20,6 @@
     "parcel": "^2.14",
     "parcel-transformer-ejs": "^1.0.1",
     "prettier": "^3.8.1",
-    "sass": "^1.97.3"
+    "sharp": "^0.33.5"
   }
 }

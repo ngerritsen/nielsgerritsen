@@ -1,16 +1,16 @@
-@import './normalize.scss';
+@use 'normalize.scss';
 
-@import './variables.scss';
-@import './mixins.scss';
+@use 'variables.scss';
+@use 'mixins.scss';
 
-@import './base.scss';
-@import './buttons.scss';
-@import './info.scss';
-@import './intro.scss';
-@import './padded-article.scss';
-@import './portrait-ball.scss';
-@import './publication.scss';
-@import './publications.scss';
-@import './section.scss';
-@import './top-bar.scss';
-@import './utils.scss';
+@use 'base.scss';
+@use 'buttons.scss';
+@use 'info.scss';
+@use 'intro.scss';
+@use 'padded-article.scss';
+@use 'portrait-ball.scss';
+@use 'publication.scss';
+@use 'publications.scss';
+@use 'section.scss';
+@use 'top-bar.scss';
+@use 'utils.scss';

@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 .publication {
   position: relative;
 }
@@ -12,12 +15,12 @@
   transition: opacity 0.2s ease;
   opacity: 0;
   position: absolute;
-  padding: $spacing-md;
+  padding: variables.$spacing-md;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
-  background-color: rgba($color-black, 0.75);
+  background-color: rgba(variables.$color-black, 0.75);
   pointer-events: none;
 }
 
@@ -29,32 +32,32 @@
 .publication__title {
   font-weight: bold;
   font-size: 1.8rem;
-  margin: 0 0 $spacing-xxs;
+  margin: 0 0 variables.$spacing-xxs;
 }
 
 .publication__description {
   font-size: 0.9em;
   line-height: 1.4;
-  margin: 0 0 $spacing-xxs;
+  margin: 0 0 variables.$spacing-xxs;
 }
 
 .publication__link {
-  @include link-theme($color-blue);
+  @include mixins.link-theme(variables.$color-blue);
 }
 
 .publication__toggle {
-  box-shadow: 0 1px 6px rgba($color-black, 0.5);
+  box-shadow: 0 1px 6px rgba(variables.$color-black, 0.5);
 }
 
 .publication__toggle-wrapper {
   position: absolute;
-  bottom: $spacing-sm;
+  bottom: variables.$spacing-sm;
   left: 0;
   right: 0;
   text-align: center;
 }
 
-@include from-lg {
+@include mixins.from-lg {
   .publication__meta {
     pointer-events: all;
 

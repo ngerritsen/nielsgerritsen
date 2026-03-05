@@ -1,13 +1,16 @@
+@use "mixins";
+@use "variables";
+
 .top-bar {
-  background-color: $color-dark;
-  color: $color-white;
+  background-color: variables.$color-dark;
+  color: variables.$color-white;
 }
 
 .top-bar__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-md 0;
+  padding: variables.$spacing-md 0;
 }
 
 .top-bar__title {
@@ -20,9 +23,9 @@
 }
 
 .top-bar__link {
-  @include link-theme($color-white);
+  @include mixins.link-theme(variables.$color-white);
 
-  padding: 0 $spacing-xs;
+  padding: 0 variables.$spacing-xs;
   font-size: 1.8rem;
 
   &:hover {
@@ -30,12 +33,12 @@
   }
 }
 
-@include from-sm {
+@include mixins.from-sm {
   .top-bar__title {
     font-size: 3.2rem;
   }
 
   .top-bar__content {
-    padding: $spacing-xl 0;
+    padding: variables.$spacing-xl 0;
   }
 }

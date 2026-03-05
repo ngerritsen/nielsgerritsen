@@ -1,32 +1,35 @@
+@use "mixins";
+@use "variables";
+
 .publications {
   padding: 0;
   list-style: none;
 }
 
 .publications__item {
-  margin-bottom: $spacing-xs;
+  margin-bottom: variables.$spacing-xs;
 }
 
-@include from-sm {
+@include mixins.from-sm {
   .publications {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -#{$spacing-xs};
+    margin: 0 -#{variables.$spacing-xs};
   }
 
   .publications__item {
-    width: calc(50% - #{$spacing-sm});
-    margin: 0 $spacing-xs $spacing-xs;
+    width: calc(50% - #{variables.$spacing-sm});
+    margin: 0 variables.$spacing-xs variables.$spacing-xs;
   }
 }
 
-@include from-lg {
+@include mixins.from-lg {
   .publications {
-    margin: 0 -#{$spacing-xs};
+    margin: 0 -#{variables.$spacing-xs};
   }
 
   .publications__item {
-    width: calc(33.3% - #{$spacing-sm});
-    margin: 0 $spacing-xs $spacing-md;
+    width: calc(33.3% - #{variables.$spacing-sm});
+    margin: 0 variables.$spacing-xs variables.$spacing-md;
   }
 }

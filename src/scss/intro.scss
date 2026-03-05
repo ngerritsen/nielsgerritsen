@@ -1,5 +1,8 @@
+@use "mixins";
+@use "variables";
+
 .intro {
-  background: $color-lightgrey url('../images/header-bg.jpg') no-repeat 0 center;
+  background: variables.$color-lightgrey url('../images/header-bg.jpg?as=webp') no-repeat 0 center;
   background-size: cover;
   padding-top: 20%;
   padding-bottom: 20%;
@@ -14,13 +17,13 @@
   width: 24rem;
   height: 24rem;
   border-radius: 50%;
-  background-color: $color-white;
+  background-color: variables.$color-white;
   text-align: center;
 }
 
 .intro__quote {
   position: relative;
-  font-family: $heading-font;
+  font-family: variables.$heading-font;
   margin: 0;
   font-size: 3rem;
   line-height: 1.4;
@@ -31,7 +34,7 @@
   font-size: 4rem;
 }
 
-@include from-md {
+@include mixins.from-md {
   .intro {
     padding-top: 15rem;
     padding-bottom: 15rem;

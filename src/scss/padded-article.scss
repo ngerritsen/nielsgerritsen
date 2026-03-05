@@ -1,4 +1,6 @@
-@include from-md {
+@use "mixins";
+
+@include mixins.from-md {
   .padded-article {
     width: 66.7%;
   }

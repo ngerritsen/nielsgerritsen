@@ -1,3 +1,4 @@
+@use "sass:color";
 /* Fonts */
 
 @font-face {
@@ -23,9 +24,9 @@ $standard-font: 'Open Sans', Helvetica, Arial, sans-serif;
 /* Colors */
 $color-white: #ffffff;
 $color-black: #000000;
-$color-dark: lighten($color-black, 7%);
-$color-grey: darken($color-white, 50%);
-$color-lightgrey: darken($color-white, 14%);
+$color-dark: color.adjust($color-black, $lightness: 7%);
+$color-grey: color.adjust($color-white, $lightness: -50%);
+$color-lightgrey: color.adjust($color-white, $lightness: -14%);
 $color-text: $color-dark;
 $color-blue: #3498db;
 

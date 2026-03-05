@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables";
+
 @mixin clearfix() {
   *zoom: 1;
   &:before,
@@ -39,10 +42,10 @@
 
 @mixin button-theme($bg-color, $fg-color) {
   $hover-offset: 10%;
-  $hover-color: darken($bg-color, $hover-offset);
+  $hover-color: color.adjust($bg-color, $lightness: -$hover-offset);
 
-  @if lightness($bg-color) < lightness($fg-color) {
-    $hover-color: lighten($bg-color, $hover-offset);
+  @if color.channel($bg-color, "lightness", $space: hsl) < color.channel($fg-color, "lightness", $space: hsl) {
+    $hover-color: color.adjust($bg-color, $lightness: $hover-offset);
   }
 
   background-color: $bg-color;
@@ -62,10 +65,10 @@
 
 @mixin link-theme($color) {
   $hover-offset: 10%;
-  $hover-color: lighten($color, $hover-offset);
+  $hover-color: color.adjust($color, $lightness: $hover-offset);
 
-  @if lightness($color) > lightness($color-grey) {
-    $hover-color: darken($color, $hover-offset);
+  @if color.channel($color, "lightness", $space: hsl) > color.channel(variables.$color-grey, "lightness", $space: hsl) {
+    $hover-color: color.adjust($color, $lightness: -$hover-offset);
   }
 
   text-decoration: none;
@@ -89,25 +92,25 @@
 
 /* Responsive */
 @mixin from-sm() {
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: variables.$screen-sm-min) {
     @content;
   }
 }
 
 @mixin from-md() {
-  @media (min-width: $screen-md-min) {
+  @media (min-width: variables.$screen-md-min) {
     @content;
   }
 }
 
 @mixin from-lg() {
-  @media (min-width: $screen-lg-min) {
+  @media (min-width: variables.$screen-lg-min) {
     @content;
   }
 }
 
 @mixin from-xl() {
-  @media (min-width: $screen-xl-min) {
+  @media (min-width: variables.$screen-xl-min) {
     @content;
   }
 }

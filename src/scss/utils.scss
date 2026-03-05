@@ -1,14 +1,16 @@
+@use "mixins";
+
 .hidden {
   display: none;
 }
 
-@include from-md {
+@include mixins.from-md {
   .float-left-from-md {
     float: left;
   }
 }
 
-@include from-lg {
+@include mixins.from-lg {
   .visible-inline-from-lg {
     display: inline;
   }

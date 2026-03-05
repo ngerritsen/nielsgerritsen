@@ -1,10 +1,13 @@
+@use "mixins";
+@use "variables";
+
 .button,
 .button:visited {
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.2s ease;
   border: 2px;
-  padding: $spacing-sm $spacing-md;
+  padding: variables.$spacing-sm variables.$spacing-md;
   border-radius: 99rem;
   font-weight: bold;
   font-size: 1.6rem;
@@ -15,35 +18,35 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    box-shadow: 0 0 0 $color-white;
+    box-shadow: 0 0 0 variables.$color-white;
   }
 
-  @include button-theme($color-dark, $color-white);
+  @include mixins.button-theme(variables.$color-dark, variables.$color-white);
 }
 
 .button--list-item {
   width: 100%;
-  margin-bottom: $spacing-xs;
+  margin-bottom: variables.$spacing-xs;
 }
 
 .button--small {
   font-size: 1.4rem;
-  padding: $spacing-xs $spacing-sm;
+  padding: variables.$spacing-xs variables.$spacing-sm;
 }
 
 .button__icon {
-  margin-right: $spacing-xs;
+  margin-right: variables.$spacing-xs;
 }
 
 .button--link,
 .button--link:visited {
-  @include button-theme($color-lightgrey, $color-dark);
+  @include mixins.button-theme(variables.$color-lightgrey, variables.$color-dark);
 }
 
-@include from-sm {
+@include mixins.from-sm {
   .button--list-item {
     width: auto;
-    margin-right: $spacing-xs;
-    margin-bottom: $spacing-sm;
+    margin-right: variables.$spacing-xs;
+    margin-bottom: variables.$spacing-sm;
   }
 }
