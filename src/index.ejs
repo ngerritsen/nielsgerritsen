@@ -109,7 +109,7 @@
                     <% for (const publication of [
                         {
                             title: 'De Sushimeisjes',
-                            description: 'De Sushimeisjes (the Sushigirls) is a webshop based on Wordpress I developed. It features a clean, responsive design.',
+                            description: 'Developed the original logo (that is still being used) and webshop for De Sushimeisjes, a Dutch sushi-shop.',
                             url: 'https://www.desushimeisjes.nl',
                             thumbnail: 'desushimeisjes-thumb.jpg'
                         },
@@ -120,34 +120,10 @@
                             thumbnail: 'wecodetheweb-thumb.jpg'
                         },
                         {
-                            title: 'CareHR',
-                            description: 'CareHR is a dutch company offering professional human resource advice in the health care sector. I made this clean and responsive informative website for CareHR.',
-                            url: 'https://www.carehr.nl',
-                            thumbnail: 'carehr-thumb.jpg'
-                        },
-                        {
-                            title: 'Audiotour Delft',
-                            description: 'An audiotour through the city of Delft implemented with PHP. Implemented iDeal payment and the distribution of access keys for the tour.',
-                            url: 'https://audiotourvermeerdelft.nl',
-                            thumbnail: 'audiotour-thumb.jpg'
-                        },
-                        {
-                            title: 'dessingHRadvies',
-                            description: 'dessingHRadvies is a company in the Netherlands offering human resource advice, focussing on Management Drives.',
-                            url: 'https://dessinghradvies.nl',
-                            thumbnail: 'dessing-hr-advies-thumb.jpg'
-                        },
-                        {
                             title: 'Timiks',
                             description: 'A Rubik\'s cube timer for speedsolvers, created using a React front-end and Firebase database. Optimized for adding to the homescreen of a phone as an app.',
                             url: 'https://timiks.com',
                             thumbnail: 'timiks-thumb.jpg'
-                        },
-                        {
-                            title: 'Dots & Boxes',
-                            description: 'The classic Dots and Boxes game. featuring fluid multiplayer using websockets, has a Node.js backend with Express, Socket.io and Redis.',
-                            url: 'https://dots-boxes.nielsgerritsen.com',
-                            thumbnail: 'dots-boxes-thumb.jpg'
                         },
                         {
                             title: 'Mandlebrot',
@@ -156,10 +132,10 @@
                             thumbnail: 'mandlebrot-thumb.jpg'
                         },
                         {
-                            title: 'Libsizes',
-                            description: 'Explore and analyze the size of any Javascript library on NPM. Uses an Node.js backend with Express, Socket.io and a Postgres SQL database.',
-                            url: 'https://libsizes.nielsgerritsen.com',
-                            thumbnail: 'libsizes-thumb.jpg'
+                            title: 'Round Robin',
+                            description: 'App to run round robin tournaments.',
+                            url: 'https://round-robin.nielsgerritsen.com',
+                            thumbnail: 'round-robin-thumb.jpg'
                         },
                         {
                             title: 'Calculory',
@@ -170,7 +146,7 @@
                         {
                             title: 'Containor',
                             description: 'Simple DI container for Javascript with Typescript support.',
-                            url: 'https://ngerritsen.gitlab.io/containor',
+                            url: 'https://ngerritsen.github.io/containor',
                             thumbnail: 'containor-thumb.png'
                         },
                         {
@@ -186,7 +162,7 @@
                                 data-publication
                                 data-publication-active-class="publication__meta--show"
                             >
-                                <img src="images/<%- publication.thumbnail %>" alt="<%- publication.title %>" class="publication__image">
+                                <img src="./images/<%- publication.thumbnail %>" alt="<%- publication.title %>" class="publication__image">
                                 <div class="publication__meta" data-publication-meta>
                                     <h3 class="publication__title"><%- publication.title %></h3>
                                     <p class="publication__description">
@@ -221,7 +197,7 @@
             <div class="container-fluid">
                 <article class="info">
                     <div class="info__portrait">
-                        <img src="images/portrait.png" alt="Niels Gerritsen" class="portrait-ball">
+                        <img src="./images/portrait.jpg" alt="Niels Gerritsen" class="portrait-ball">
                     </div>
 
                     <div class="info__content">
@@ -241,14 +217,14 @@
                                 <i class="button__icon fa fa-linkedin-square" aria-hidden="true"></i> Connect
                             </a>
                             <a
-                                href="https://gitlab.com/ngerritsen"
+                                href="https://github.com/ngerritsen"
                                 class="button button--link button--list-item"
                                 target="_blank"
-                                title="Collaborate on GitLab"
+                                title="Collaborate on GitHub"
                             >
-                                <i class="button__icon fa fa-gitlab" aria-hidden="true"></i> Collab
+                                <i class="button__icon fa fa-github" aria-hidden="true"></i> Collab
                             </a>
-                            <a  href="/files/cv-niels-gerritsen.pdf"
+                            <a  href="./files/cv-niels-gerritsen.pdf"
                                 class="button button--list-item"
                                 download
                                 title="Download my CV"
@@ -265,6 +241,6 @@
     <script async src="//static.getclicky.com/101354172.js"></script>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101354172ns.gif" /></p></noscript>
 
-    <script src="./js/index.js" async></script>
+    <script src="./js/index.js" type="module" defer></script>
 </body>
 </html>

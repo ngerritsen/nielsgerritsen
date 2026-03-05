@@ -40,7 +40,6 @@
   @include button-theme($color-lightgrey, $color-dark);
 }
 
-
 @include from-sm {
   .button--list-item {
     width: auto;
